@@ -35,6 +35,11 @@ public class Word
         //Remove the letter on screen
     }
 
+    public void SetActive ()
+    {
+        display.SetActive();
+    }
+
     //Check if the word was typed to the last letter, if it is then return true
     public bool WordTyped ()
     {

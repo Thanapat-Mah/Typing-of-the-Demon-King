@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -448,5 +448,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55e5f1dc08e28bd4eaff32da4d8813c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordPrefab: {fileID: 3257753319068908114, guid: a4226e828acf2454d8bc51a9ab2940bb, type: 3}
+  wordPanel: {fileID: 1533411080817029112, guid: 9c9cf8297f7906e4a95cc60a835834a3, type: 3}
   wordCanvas: {fileID: 1319174303}

@@ -15,13 +15,19 @@ public class WordDisplay : MonoBehaviour
     //Set the text that display on the canvas
     public void SetWord ( string word )
     {
+        text.autoSizeTextContainer = true;
         text.text = word;
         realText = word;
     }
 
+    public void SetActive ()
+    {
+        text.text = "<b>"+text.text+"</b>";
+    }
+
     public void TypedLetter (int typeIndex)
     {
-        typedText = "<color=grey>";
+        typedText = "<b><color=grey>";
         for(int i = 0; i < realText.Length; i++)
         {
             typedText = typedText+realText[i];
@@ -30,12 +36,11 @@ public class WordDisplay : MonoBehaviour
                 typedText = typedText+"</color>";
             }
         }
-        text.text = typedText;
-        typeIndex++;
+        text.text = typedText+"</b>";
     }
 
     public void RemovWord ()
     {
-        Destroy(gameObject);
+        Destroy( transform.parent.gameObject);
     }
 }

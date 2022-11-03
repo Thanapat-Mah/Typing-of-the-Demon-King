@@ -27,6 +27,17 @@ public class WordManager : MonoBehaviour
         Debug.Log(word.word);
 
         words.Add(word);
+        //When there is not an activeword, set the first word in the words list to be active
+        if(!hasActiveWord)
+        {
+            foreach(Word wordInList in words)
+            {
+                activeWord = wordInList;
+                hasActiveWord = true;
+                wordInList.SetActive();
+                break;
+            }
+        }
     }
 
     //When typing function
@@ -41,25 +52,13 @@ public class WordManager : MonoBehaviour
             {
                 activeWord.TypeLetter();
             }
-        } else
-        {
-            //When there is not an activeword, search from all the word in the scene the word that match the letter
-            foreach(Word word in words)
-            {
-                if(word.GetNextLetter() == letter)
-                {
-                    activeWord = word;
-                    hasActiveWord = true;
-                    word.TypeLetter();
-                    break;
-                }
-            }
         }
         //When finish the whole activeword, change hasactiveword to false and remove activeword from the "words" list
         if(hasActiveWord && activeWord.WordTyped())
         {
             hasActiveWord = false;
             words.Remove(activeWord);
+            AddWord();
         }
     }
 }
