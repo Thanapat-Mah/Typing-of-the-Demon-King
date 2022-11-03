@@ -22,6 +22,7 @@ public class WordDisplay : MonoBehaviour
 
     public void SetActive ()
     {
+        transform.parent.GetComponent<Border>().SetActive();
         text.text = "<b>"+text.text+"</b>";
     }
 

@@ -19,14 +19,8 @@ public class WordManager : MonoBehaviour
         AddWord();
     }
 
-    //Add word to the game scene
-    public void AddWord()
+    private void Update()
     {
-        //Random word from WordGenerator with their text display
-        Word word = new Word(WordGenerator.GetRandomWord(),  wordSpawner.SpawnWord());
-        Debug.Log(word.word);
-
-        words.Add(word);
         //When there is not an activeword, set the first word in the words list to be active
         if(!hasActiveWord)
         {
@@ -38,6 +32,16 @@ public class WordManager : MonoBehaviour
                 break;
             }
         }
+    }
+
+    //Add word to the game scene
+    public void AddWord()
+    {
+        //Random word from WordGenerator with their text display
+        Word word = new Word(WordGenerator.GetRandomWord(),  wordSpawner.SpawnWord());
+        Debug.Log(word.word);
+
+        words.Add(word);
     }
 
     //When typing function
@@ -58,7 +62,6 @@ public class WordManager : MonoBehaviour
         {
             hasActiveWord = false;
             words.Remove(activeWord);
-            AddWord();
         }
     }
 }
