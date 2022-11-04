@@ -12,6 +12,8 @@ public class WordManager : MonoBehaviour
     private Word activeWord;
     //Reference to wordSpawner C# script
     public WordSpawner wordSpawner;
+    //Reference to wordGenerator of specific level
+    public WordGenerator wordGenerator;
 
     //Start game word
     private void Start()
@@ -38,7 +40,7 @@ public class WordManager : MonoBehaviour
     public void AddWord()
     {
         //Random word from WordGenerator with their text display
-        Word word = new Word(WordGenerator.GetRandomWord(),  wordSpawner.SpawnWord());
+        Word word = new Word(wordGenerator.GetRandomWord(),  wordSpawner.SpawnWord());
         Debug.Log(word.word);
 
         words.Add(word);
@@ -62,6 +64,9 @@ public class WordManager : MonoBehaviour
         {
             hasActiveWord = false;
             words.Remove(activeWord);
+
+            //////////////////////////////////////// tmp code for checking word generator /////////////////////////////
+            AddWord();
         }
     }
 }

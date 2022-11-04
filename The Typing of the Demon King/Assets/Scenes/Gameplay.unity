@@ -387,6 +387,7 @@ GameObject:
   - component: {fileID: 2024397196}
   - component: {fileID: 2024397198}
   - component: {fileID: 2024397199}
+  - component: {fileID: 2024397200}
   m_Layer: 0
   m_Name: WordManager
   m_TagString: Untagged
@@ -408,6 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   words: []
   wordSpawner: {fileID: 2024397199}
+  wordGenerator: {fileID: 2024397200}
 --- !u!4 &2024397197
 Transform:
   m_ObjectHideFlags: 0
@@ -450,3 +452,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordPanel: {fileID: 1533411080817029112, guid: 9c9cf8297f7906e4a95cc60a835834a3, type: 3}
   wordCanvas: {fileID: 1319174303}
+--- !u!114 &2024397200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024397195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 928fb49cf3e97304e819396500d1bf02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  file: {fileID: 4900000, guid: 65dba0dcfc445f04d9a83f343f6c65f9, type: 3}

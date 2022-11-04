@@ -6,24 +6,18 @@ using UnityEngine;
 public class WordGenerator : MonoBehaviour
 {
 	//word example
-    private static string[] wordList = {   "sidewalk", "robin", "three", "protect", "periodic",
-									"somber", "majestic", "jump", "pretty", "wound", "jazzy",
-									"memory", "join", "crack", "grade", "boot", "cloudy", "sick",
-									"mug", "hot", "tart", "dangerous", "mother", "rustic", "economic",
-									"weird", "cut", "parallel", "wood", "encouraging", "interrupt",
-									"guide", "long", "chief", "mom", "signal", "rely", "abortive",
-									"hair", "representative", "earth", "grate", "proud", "feel",
-									"hilarious", "addition", "silent", "play", "floor", "numerous",
-									"friend", "pizzas", "building", "organic", "past", "mute", "unusual",
-									"mellow", "analyse", "crate", "homely", "protest", "painstaking",
-									"society", "head", "female", "eager", "heap", "dramatic", "present",
-									"sin", "box", "pies", "awesome", "root", "available", "sleet", "wax",
-									"boring", "smash", "anger", "tasty", "spare", "tray", "daffy", "scarce",
-									"account", "spot", "thought", "distinct", "nimble", "practise", "cream",
-									"ablaze", "thoughtless", "love", "verdict", "giant"    };
-                                    
-	//function for getting and return random word from the list								
-    public static string GetRandomWord ()
+    private string[] wordList = {"ca", "py", "ba", "ra"};
+	//reference to text asset .txt file
+	public TextAsset file;
+
+    private void Awake()
+    {
+		//reading and get word list from the file assest
+		wordList = file.text.Split("\r\n");
+	}
+
+    //function for getting and return random word from the list								
+    public string GetRandomWord ()
     {
 		int randomIndex = Random.Range(0, wordList.Length);
 		string randomWord = wordList[randomIndex];
