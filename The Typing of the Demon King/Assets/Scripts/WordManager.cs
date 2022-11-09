@@ -6,6 +6,8 @@ public class WordManager : MonoBehaviour
 {
     //List of word on the scene
     public List<Word> words;
+    //List of word on the scene
+    public List<Monster> monsters;
     //If the word start typing hasActiveWord = true
     private bool hasActiveWord;
     //What word that is typing now
@@ -14,6 +16,11 @@ public class WordManager : MonoBehaviour
     public WordSpawner wordSpawner;
     //Reference to wordGenerator of specific level
     public WordGenerator wordGenerator;
+    //Reference to monster
+    public MonsterSpawner monsterSpawner;
+    //Counting how many monster on screen
+    private int monsterCount = 0;
+    private int maximumMonster = 3;
 
     //Start game word
     private void Start()
@@ -39,11 +46,17 @@ public class WordManager : MonoBehaviour
     //Add word to the game scene
     public void AddWord()
     {
+        Debug.Log("In"+monsterCount);
         //Random word from WordGenerator with their text display
-        Word word = new Word(wordGenerator.GetRandomWord(),  wordSpawner.SpawnWord());
-        Debug.Log(word.word);
-
+        Word word = new Word(wordGenerator.GetRandomWord(),  wordSpawner.SpawnWord(monsterCount));
+        Monster monster = monsterSpawner.SpawnMonster(monsterCount);
         words.Add(word);
+        monsters.Add(monster);
+        monsterCount++;
+        if(monsterCount >= maximumMonster){
+            monsterCount = 0;
+        }
+        Debug.Log("Out"+monsterCount);
     }
 
     //When typing function
@@ -64,7 +77,8 @@ public class WordManager : MonoBehaviour
         {
             hasActiveWord = false;
             words.Remove(activeWord);
-
+            monsters[0].RemoveMonster();
+            monsters.RemoveAt(0);
             //////////////////////////////////////// tmp code for checking word generator /////////////////////////////
             AddWord();
         }
