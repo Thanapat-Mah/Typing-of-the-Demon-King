@@ -24,6 +24,11 @@ public class Key : MonoBehaviour
         return key;
     }
 
+    public bool IsSelected()
+    {
+        return _isSelected;
+    }
+
     void OnMouseDown()
     {
         // Toggle the selection of the key

@@ -6,15 +6,30 @@ public class Keyboard : MonoBehaviour
 {
     // Array of all key on the keyboard
     public Key[] keys;
+    public List<string> selectedKeys = new List<string>();
 
     void Start()
     {
         // Get all key on the keyboard
         keys = GetComponentsInChildren<Key>();
+        selectedKeys.Clear();
     }
 
     void Update()
     {
+        // Clear the List of selected key
+        selectedKeys.Clear();
+
+        // Check wheter each individual key is selected or not.
+        foreach (Key key in keys)
+        {
+            if (key.IsSelected())
+            {
+                // Add the key into the List of selected key
+                selectedKeys.Add(key.GetKey());
+            }
+        }
+
         //foreach (Key key in keys)
         //{
         //    // Get the Renderer component from the key
