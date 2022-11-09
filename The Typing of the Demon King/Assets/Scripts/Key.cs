@@ -16,7 +16,7 @@ public class Key : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        RenderSprite();
     }
 
     public string GetKey()
@@ -29,14 +29,20 @@ public class Key : MonoBehaviour
         return _isSelected;
     }
 
+    public void SetSelected(bool isSelect)
+    {
+        _isSelected = isSelect;
+    }
+
+    // Toggle the selection of the key
     void OnMouseDown()
     {
-        // Toggle the selection of the key
         _isSelected = !_isSelected;
         RenderSprite();
         Debug.Log(key);
     }
 
+    // Render the sprite color according to its status
     void RenderSprite()
     {
         if (_isSelected)
