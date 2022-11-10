@@ -26,6 +26,7 @@ public class WordManager : MonoBehaviour
     private void Start()
     {
         AddWord();
+        AddWord();
     }
 
     private void Update()
@@ -46,7 +47,6 @@ public class WordManager : MonoBehaviour
     //Add word to the game scene
     public void AddWord()
     {
-        Debug.Log("In"+monsterCount);
         //Random word from WordGenerator with their text display
         Word word = new Word(wordGenerator.GetRandomWord(),  wordSpawner.SpawnWord(monsterCount));
         Monster monster = monsterSpawner.SpawnMonster(monsterCount);
@@ -56,7 +56,6 @@ public class WordManager : MonoBehaviour
         if(monsterCount >= maximumMonster){
             monsterCount = 0;
         }
-        Debug.Log("Out"+monsterCount);
     }
 
     //When typing function
