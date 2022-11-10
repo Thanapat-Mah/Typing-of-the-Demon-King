@@ -6,7 +6,9 @@ public class Keyboard : MonoBehaviour
 {
     // Array of all key on the keyboard
     public Key[] keys;
-    public List<string> selectedKeys = new List<string>();
+    public static List<string> selectedKeys = new List<string>();
+    // Store the max lenght of generated word for praticing
+    public static int maxPracticeWordLenght = 3;
 
     void Start()
     {
@@ -39,5 +41,10 @@ public class Keyboard : MonoBehaviour
         //    Color RandomColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
         //    keyRenderer.material.color = RandomColor;
         //}
+    }
+
+    public void bara()
+    {
+        Debug.Log("capybaraaaaaaaaaaaaaa");
     }
 }
