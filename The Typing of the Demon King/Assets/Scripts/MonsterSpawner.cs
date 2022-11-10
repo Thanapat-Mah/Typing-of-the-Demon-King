@@ -5,9 +5,9 @@ using UnityEngine;
 public class MonsterSpawner : MonoBehaviour
 {
     public GameObject monster;
-    public Transform worldSpawnPoint1;
-    public Transform worldSpawnPoint2;
-    public Transform worldSpawnPoint3;
+    public RectTransform spawnPoint1;
+    public RectTransform spawnPoint2;
+    public RectTransform spawnPoint3;
 
     private GameObject monsterObject;
 
@@ -16,13 +16,13 @@ public class MonsterSpawner : MonoBehaviour
         if(monsterCount == 0)
         {
             //Create game object from prefab with Canvas as their parent
-            monsterObject = Instantiate(monster,worldSpawnPoint1);
+            monsterObject = Instantiate(monster,spawnPoint1);
         } else if(monsterCount == 1)
         {
-            monsterObject = Instantiate(monster,worldSpawnPoint2);
+            monsterObject = Instantiate(monster,spawnPoint2);
         } else
         {
-            monsterObject = Instantiate(monster,worldSpawnPoint3);
+            monsterObject = Instantiate(monster,spawnPoint3);
         }
 
         Monster monsterReturn = monsterObject.GetComponentInChildren<Monster>();
