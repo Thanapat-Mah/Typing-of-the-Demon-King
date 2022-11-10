@@ -1057,7 +1057,7 @@ GameObject:
   - component: {fileID: 1988443071}
   - component: {fileID: 1988443070}
   m_Layer: 0
-  m_Name: MetalDraonSlime
+  m_Name: MetalDragonSlime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1192,11 +1192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordPanel: {fileID: 1533411080817029112, guid: 9c9cf8297f7906e4a95cc60a835834a3, type: 3}
-  MainCamera: {fileID: 463153897}
   wordCanvas: {fileID: 1319174303}
-  worldSpawnPoint1: {fileID: 0}
-  worldSpawnPoint2: {fileID: 0}
-  worldSpawnPoint3: {fileID: 0}
   spawnPoint1: {fileID: 0}
   spawnPoint2: {fileID: 0}
   spawnPoint3: {fileID: 0}
@@ -1226,9 +1222,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 8880858055529550716, guid: b3041cb5cfa96174bbcdb91ca4fc04cd, type: 3}
-  worldSpawnPoint1: {fileID: 0}
-  worldSpawnPoint2: {fileID: 0}
-  worldSpawnPoint3: {fileID: 0}
+  spawnPoint1: {fileID: 0}
+  spawnPoint2: {fileID: 0}
+  spawnPoint3: {fileID: 0}
 --- !u!1 &2044743393
 GameObject:
   m_ObjectHideFlags: 0
