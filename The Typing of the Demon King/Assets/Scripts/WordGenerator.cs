@@ -6,7 +6,7 @@ using UnityEngine;
 public class WordGenerator : MonoBehaviour
 {
 	//word example
-    private string[] wordList = {"ca", "py", "ba", "ra"};
+    private string[] wordList = { "ca", "py", "ba", "ra" };
 	/// Edit this part for using with the practice mode //////////////////////////
 	//reference to text asset .txt file
 	public TextAsset file = null;
@@ -23,7 +23,12 @@ public class WordGenerator : MonoBehaviour
 		else
         {
 			wordList = Keyboard.GetSelectedKeys();
-			maxPracticeWordLenght = Keyboard.GetMaxLenght();
+            // hotfix using a default character when there is no selected key.
+            if(wordList.Length == 0)
+            {
+				wordList = new string[1] { "a" };
+            }
+            maxPracticeWordLenght = Keyboard.GetMaxLenght();
 		}
 	}
 

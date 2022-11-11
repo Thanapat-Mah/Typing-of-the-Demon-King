@@ -69,4 +69,10 @@ public class Keyboard : MonoBehaviour
     {
         return maxPracticeWordLenght;
     }
+
+    public static void ReadMaxLenght()
+    {
+        // Get max word lenght from the slider
+        maxPracticeWordLenght = MaxLenghtPractice.GetMaxLenght();
+    }
 }
