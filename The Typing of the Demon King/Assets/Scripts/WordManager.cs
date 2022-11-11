@@ -9,9 +9,11 @@ public class WordManager : MonoBehaviour
     //List of word on the scene
     public List<Monster> monsters;
     //If the word start typing hasActiveWord = true
-    private bool hasActiveWord;
+    public bool hasActiveWord = false;
     //What word that is typing now
     private Word activeWord;
+    //What monster that is typing now
+    public Monster activeMonster;
     //Reference to wordSpawner C# script
     public WordSpawner wordSpawner;
     //Reference to wordGenerator of specific level
@@ -21,11 +23,12 @@ public class WordManager : MonoBehaviour
     //Counting how many monster on screen
     private int monsterCount = 0;
     private int maximumMonster = 3;
+    //Reference to WaveManager
+    public WaveManager WaveManager;
 
     //Start game word
     private void Start()
     {
-        AddWord();
         AddWord();
     }
 
@@ -39,6 +42,11 @@ public class WordManager : MonoBehaviour
                 activeWord = wordInList;
                 hasActiveWord = true;
                 wordInList.SetActive();
+                break;
+            }
+            foreach(Monster monsterInList in monsters)
+            {
+                activeMonster = monsterInList;
                 break;
             }
         }
@@ -56,6 +64,7 @@ public class WordManager : MonoBehaviour
         if(monsterCount >= maximumMonster){
             monsterCount = 0;
         }
+        WaveManager.monsterCount++;
     }
 
     //When typing function
@@ -79,7 +88,13 @@ public class WordManager : MonoBehaviour
             monsters[0].RemoveMonster();
             monsters.RemoveAt(0);
             //////////////////////////////////////// tmp code for checking word generator /////////////////////////////
-            AddWord();
+            if(WaveManager.monsterCount < WaveManager.maximumMonsterPerWave)
+            {
+                AddWord();
+                WaveManager.Reset();
+            } else {
+                WaveManager.NextWave();
+            }
         }
     }
 }

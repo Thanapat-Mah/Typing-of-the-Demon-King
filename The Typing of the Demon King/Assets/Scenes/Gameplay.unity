@@ -585,6 +585,7 @@ GameObject:
   - component: {fileID: 2024397199}
   - component: {fileID: 2024397200}
   - component: {fileID: 2024397201}
+  - component: {fileID: 2024397202}
   m_Layer: 0
   m_Name: WordManager
   m_TagString: Untagged
@@ -606,9 +607,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   words: []
   monsters: []
+  hasActiveWord: 0
+  activeMonster: {fileID: 0}
   wordSpawner: {fileID: 2024397199}
   wordGenerator: {fileID: 2024397200}
   monsterSpawner: {fileID: 2024397201}
+  WaveManager: {fileID: 2024397202}
 --- !u!4 &2024397197
 Transform:
   m_ObjectHideFlags: 0
@@ -666,7 +670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928fb49cf3e97304e819396500d1bf02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  file: {fileID: 4900000, guid: 68857de9a86a237408d09cc06ded8f05, type: 3}
+  file: {fileID: 4900000, guid: 65dba0dcfc445f04d9a83f343f6c65f9, type: 3}
 --- !u!114 &2024397201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -683,3 +687,25 @@ MonoBehaviour:
   spawnPoint1: {fileID: 1439516077}
   spawnPoint2: {fileID: 1882763477}
   spawnPoint3: {fileID: 1413490670}
+--- !u!114 &2024397202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024397195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f025970f156498dd849c651dc90b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WordManager: {fileID: 2024397196}
+  maximumMonsterPerWave: 10
+  monsterCount: 0
+  numberOfWaveCount: 0
+  maximumWave: 2
+  waveCoolDown: 5
+  _idleTime: 5
+  _attackingTime: 2
+  _warningTime: 2
+  _warningfrequency: 10
