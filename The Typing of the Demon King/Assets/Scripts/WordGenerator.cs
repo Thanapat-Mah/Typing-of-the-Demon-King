@@ -22,8 +22,8 @@ public class WordGenerator : MonoBehaviour
 		}
 		else
         {
-			wordList = Keyboard.selectedKeys.ToArray();
-			maxPracticeWordLenght = Keyboard.maxPracticeWordLenght;
+			wordList = Keyboard.GetSelectedKeys();
+			maxPracticeWordLenght = Keyboard.GetMaxLenght();
 		}
 	}
 

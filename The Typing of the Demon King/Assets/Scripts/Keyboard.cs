@@ -4,17 +4,44 @@ using UnityEngine;
 
 public class Keyboard : MonoBehaviour
 {
+    // Singleton Keyboard instance of the class
+    public static Keyboard Instance;
+
     // Array of all key on the keyboard
-    public Key[] keys;
+    public static Key[] keys;
     public static List<string> selectedKeys = new List<string>();
     // Store the max lenght of generated word for praticing
     public static int maxPracticeWordLenght = 3;
+
+    // Make sure that this is only one instance of the class
+    public void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     void Start()
     {
         // Get all key on the keyboard
         keys = GetComponentsInChildren<Key>();
-        selectedKeys.Clear();
+
+        // Set the selected keys as a previous setting, make the practice key board has memory
+        foreach (string selectedKey in selectedKeys)
+        {
+            for (int i = 0; i < keys.Length; i++)
+            {
+                if (keys[i].GetKey() == selectedKey)
+                {
+                    keys[i].SetSelected(true);
+                }
+            }
+        }
     }
 
     void Update()
@@ -31,20 +58,15 @@ public class Keyboard : MonoBehaviour
                 selectedKeys.Add(key.GetKey());
             }
         }
-
-        //foreach (Key key in keys)
-        //{
-        //    // Get the Renderer component from the key
-        //    var keyRenderer = key.GetComponent<Renderer>();
-
-        //    //Generates a random color by generating 3 random numbers between 0.0 and 1.0.
-        //    Color RandomColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
-        //    keyRenderer.material.color = RandomColor;
-        //}
     }
 
-    public void bara()
+    public static string[] GetSelectedKeys()
     {
-        Debug.Log("capybaraaaaaaaaaaaaaa");
+        return selectedKeys.ToArray();
+    }
+
+    public static int GetMaxLenght()
+    {
+        return maxPracticeWordLenght;
     }
 }
