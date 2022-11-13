@@ -82,4 +82,13 @@ public class WordManager : MonoBehaviour
             AddWord();
         }
     }
+
+    public char GetNextLetter()
+    {
+        if (hasActiveWord)
+        {
+            return activeWord.GetNextLetter();
+        }
+        return ' ';
+    }
 }
