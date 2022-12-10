@@ -97,4 +97,13 @@ public class WordManager : MonoBehaviour
             }
         }
     }
+
+    public char GetNextLetter()
+    {
+        if (hasActiveWord)
+        {
+            return activeWord.GetNextLetter();
+        }
+        return ' ';
+    }
 }
