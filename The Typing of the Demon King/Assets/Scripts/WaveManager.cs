@@ -44,8 +44,14 @@ public class WaveManager : MonoBehaviour
             {
                 Debug.Log("EndCoolDown");
                 WordManager.AllmonsterCount = 0;
-                WordManager.AddWord();
-                WordManager.AddWord();
+                //Check number of key
+                if(key == MaxKey)
+                {
+                    StartBossWave();
+                } else {
+                    WordManager.AddWord();
+                    WordManager.AddWord();
+                }
                 _isGameRun = true;
             }
         }
@@ -57,6 +63,13 @@ public class WaveManager : MonoBehaviour
         numberOfWaveCount++;
         cooldown = 0f;
         _isGameRun = false;
+    }
+
+    public void StartBossWave()
+    {
+        Debug.Log("BossWave");
+        WordManager.BossMode = true;
+        WordManager.AddBossWord();
     }
 
     public int getWaveNum()

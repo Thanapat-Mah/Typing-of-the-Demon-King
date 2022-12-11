@@ -6,7 +6,6 @@ public class MonsterManager : MonoBehaviour
 {
     public WordManager WordManager;
     public WaveManager WaveManager;
-    public float waveCoolDown = 10f;
     //How long enemy wait before attack
     public float _idleTime = 10f;
     //How long enemy stay in attack mode
@@ -16,22 +15,18 @@ public class MonsterManager : MonoBehaviour
     //How long enemy warn player before attack
     public float _warningfrequency = 4f;
 
-
-    //is the game running
-    private static bool _isGameRun;
     //parameter for counting time
     private static float _remainingTime;
     private bool warnSwitch = false;
     private float warning = 0f;
-    private float cooldown = 0f;
+
     private void Start()
     {
-        _isGameRun = true;
         _remainingTime = 0f;
         warnSwitch = false;
         warning = 0f;
-        cooldown = 0f;
     }
+
     private void Update()
     {
         if(WaveManager._isGameRun)
@@ -78,7 +73,7 @@ public class MonsterManager : MonoBehaviour
             Reset();
         }
 
-        //if the monster is dead reset the clock for attack
+        //if the monster is dead reset the clock for another monster attack
         if(WordManager.AddNewMonster)
         {
             Reset();

@@ -2082,6 +2082,7 @@ MonoBehaviour:
   monsterSpawner: {fileID: 2024397201}
   AddNewMonster: 0
   EndOfWave: 0
+  BossMode: 0
   practice: 1
   AllmonsterCount: 0
   maximumMonsterPerWave: 10
@@ -2126,10 +2127,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordPanel: {fileID: 1533411080817029112, guid: 9c9cf8297f7906e4a95cc60a835834a3, type: 3}
-  wordCanvas: {fileID: 1319174303}
   spawnPoint1: {fileID: 1439516077}
   spawnPoint2: {fileID: 1882763477}
   spawnPoint3: {fileID: 1413490670}
+  spawnPoint4: {fileID: 0}
+  spawnPoint5: {fileID: 0}
 --- !u!114 &2024397200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2143,6 +2145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   file: {fileID: 0}
+  Bossfile: {fileID: 0}
 --- !u!114 &2024397201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2156,9 +2159,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 8880858055529550716, guid: b3041cb5cfa96174bbcdb91ca4fc04cd, type: 3}
+  Boss: {fileID: 6939629739365819444, guid: 18136f4dcd803d44485df7d54658eb77, type: 3}
   spawnPoint1: {fileID: 1439516077}
   spawnPoint2: {fileID: 1882763477}
   spawnPoint3: {fileID: 1413490670}
+  spawnPoint4: {fileID: 0}
+  spawnPoint5: {fileID: 0}
+  centerPoint: {fileID: 0}
 --- !u!114 &2024397202
 MonoBehaviour:
   m_ObjectHideFlags: 0

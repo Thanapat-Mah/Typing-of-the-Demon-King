@@ -24,6 +24,8 @@ public class WordManager : MonoBehaviour
     public bool AddNewMonster = false;
     //use to signal other that the new monster is spawn
     public bool EndOfWave = false;
+    //use to signal other that This is in the Boss Phase
+    public bool BossMode = false;
     //use to switch to practice mode
     public bool practice = false;
     //Counting how many monster on screen
@@ -76,6 +78,25 @@ public class WordManager : MonoBehaviour
         }
     }
 
+    public void AddBossWord()
+    {
+        //Random word from WordGenerator with their text display
+        Word word = new Word(wordGenerator.GetBossRandomWord(),  wordSpawner.SpawnWord(10));
+        words.Add(word);
+        word = new Word(wordGenerator.GetBossRandomWord(),  wordSpawner.SpawnWord(11));
+        words.Add(word);
+        word = new Word(wordGenerator.GetBossRandomWord(),  wordSpawner.SpawnWord(12));
+        words.Add(word);
+        word = new Word(wordGenerator.GetBossRandomWord(),  wordSpawner.SpawnWord(13));
+        words.Add(word);
+        Monster monster = monsterSpawner.SpawnMonster(11);
+        monsters.Add(monster);
+        monsterCount++;
+        if(monsterCount >= maximumMonster){
+            monsterCount = 0;
+        }
+    }
+
     //When typing function
     public void TypeLetter (char letter)
     {
@@ -90,7 +111,7 @@ public class WordManager : MonoBehaviour
             }
         }
         //When finish the whole activeword, change hasactiveword to false and remove activeword from the "words" list
-        if(hasActiveWord && activeWord.WordTyped())
+        if(hasActiveWord && activeWord.WordTyped() && !BossMode)
         {
             hasActiveWord = false;
             words.Remove(activeWord);
@@ -112,6 +133,16 @@ public class WordManager : MonoBehaviour
                 else if(AllmonsterCount == maximumMonsterPerWave) {
                     EndOfWave = true;
                 }
+            }
+        } else if(hasActiveWord && activeWord.WordTyped() && BossMode)
+        {
+            hasActiveWord = false;
+            words.Remove(activeWord);
+            AddNewMonster = true;
+            if(words.Count == 0)
+            {
+                monsters[0].RemoveMonster();
+                monsters.RemoveAt(0);
             }
         }
     }

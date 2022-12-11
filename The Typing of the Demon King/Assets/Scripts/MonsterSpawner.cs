@@ -5,9 +5,13 @@ using UnityEngine;
 public class MonsterSpawner : MonoBehaviour
 {
     public GameObject monster;
+    public GameObject Boss;
     public RectTransform spawnPoint1;
     public RectTransform spawnPoint2;
     public RectTransform spawnPoint3;
+    public RectTransform spawnPoint4;
+    public RectTransform spawnPoint5;
+    public RectTransform centerPoint;
 
     private GameObject monsterObject;
 
@@ -20,9 +24,19 @@ public class MonsterSpawner : MonoBehaviour
         } else if(monsterCount == 1)
         {
             monsterObject = Instantiate(monster,spawnPoint2);
-        } else
+        } else if(monsterCount == 2)
         {
             monsterObject = Instantiate(monster,spawnPoint3);
+        } else if(monsterCount == 3)
+        {
+            monsterObject = Instantiate(monster,spawnPoint4);
+        } else if(monsterCount == 4)
+        {
+            monsterObject = Instantiate(monster,spawnPoint5);
+        } 
+        else
+        {
+            monsterObject = Instantiate(Boss,centerPoint.position,spawnPoint2.rotation,spawnPoint2);
         }
 
         Monster monsterReturn = monsterObject.GetComponentInChildren<Monster>();
