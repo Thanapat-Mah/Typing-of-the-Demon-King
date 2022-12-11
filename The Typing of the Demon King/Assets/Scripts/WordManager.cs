@@ -20,15 +20,25 @@ public class WordManager : MonoBehaviour
     public WordGenerator wordGenerator;
     //Reference to monster
     public MonsterSpawner monsterSpawner;
+    //use to signal other that the new monster is spawn
+    public bool AddNewMonster = false;
+    //use to signal other that the new monster is spawn
+    public bool EndOfWave = false;
+    //use to switch to practice mode
+    public bool practice = false;
     //Counting how many monster on screen
     private int monsterCount = 0;
+    //Counting how many monster on the wave
+    public int AllmonsterCount = 0;
+    //Setting maximum number per wave
+    public int maximumMonsterPerWave = 10;
+    //Setting maximum number on scene
     private int maximumMonster = 3;
-    //Reference to WaveManager
-    public WaveManager WaveManager;
 
     //Start game word
     private void Start()
     {
+        AddWord();
         AddWord();
     }
 
@@ -64,7 +74,6 @@ public class WordManager : MonoBehaviour
         if(monsterCount >= maximumMonster){
             monsterCount = 0;
         }
-        WaveManager.monsterCount++;
     }
 
     //When typing function
@@ -83,17 +92,20 @@ public class WordManager : MonoBehaviour
         //When finish the whole activeword, change hasactiveword to false and remove activeword from the "words" list
         if(hasActiveWord && activeWord.WordTyped())
         {
+            AllmonsterCount++;
+            Debug.Log(AllmonsterCount);
             hasActiveWord = false;
             words.Remove(activeWord);
             monsters[0].RemoveMonster();
             monsters.RemoveAt(0);
             //////////////////////////////////////// tmp code for checking word generator /////////////////////////////
-            if(WaveManager.monsterCount < WaveManager.maximumMonsterPerWave)
+            if(AllmonsterCount < maximumMonsterPerWave-1 && !EndOfWave)
             {
                 AddWord();
-                WaveManager.Reset();
-            } else {
-                WaveManager.NextWave();
+                AddNewMonster = true;
+            }  
+            else if(AllmonsterCount == maximumMonsterPerWave) {
+                EndOfWave = true;
             }
         }
     }
