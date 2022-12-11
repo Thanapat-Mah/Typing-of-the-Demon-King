@@ -92,20 +92,26 @@ public class WordManager : MonoBehaviour
         //When finish the whole activeword, change hasactiveword to false and remove activeword from the "words" list
         if(hasActiveWord && activeWord.WordTyped())
         {
-            AllmonsterCount++;
-            Debug.Log(AllmonsterCount);
             hasActiveWord = false;
             words.Remove(activeWord);
             monsters[0].RemoveMonster();
             monsters.RemoveAt(0);
-            //////////////////////////////////////// tmp code for checking word generator /////////////////////////////
-            if(AllmonsterCount < maximumMonsterPerWave-1 && !EndOfWave)
+            if(practice)
             {
                 AddWord();
-                AddNewMonster = true;
-            }  
-            else if(AllmonsterCount == maximumMonsterPerWave) {
-                EndOfWave = true;
+            }
+            else
+            {
+                AllmonsterCount++;
+                Debug.Log(AllmonsterCount);
+                if(AllmonsterCount < maximumMonsterPerWave-1 && !EndOfWave)
+                {
+                    AddWord();
+                    AddNewMonster = true;
+                }  
+                else if(AllmonsterCount == maximumMonsterPerWave) {
+                    EndOfWave = true;
+                }
             }
         }
     }
