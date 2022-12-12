@@ -12,7 +12,6 @@ public class Border : MonoBehaviour
 
     public void SetActive ()
     {
-        Debug.Log("InActive");
         Image.sprite = activeSprite;
     }
 

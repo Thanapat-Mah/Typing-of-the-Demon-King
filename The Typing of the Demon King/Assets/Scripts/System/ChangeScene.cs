@@ -17,4 +17,9 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    
+    public void OnClick_StartGame()
+    {
+        StatManager.Instance.StartCalculateStatistic();
+    }
 }

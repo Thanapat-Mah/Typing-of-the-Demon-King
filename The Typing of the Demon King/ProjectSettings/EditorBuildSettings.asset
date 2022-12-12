@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: 541ab2e43d3b862499144232b46f424f
+  - enabled: 1
+    path: Assets/Scenes/PracticePrepare.unity
+    guid: b31017c1b2070924f81d42d5ce10a629
+  - enabled: 1
+    path: Assets/Scenes/PracticeGameplay.unity
+    guid: e7a194ffae219f744acc117444f34b99
   m_configObjects: {}
