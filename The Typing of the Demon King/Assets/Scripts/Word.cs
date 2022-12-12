@@ -47,7 +47,7 @@ public class Word
         if(wordTyped)
         {
             //Remove the word on screen
-            display.RemovWord();
+            display.RemoveWord();
         }
         return wordTyped;
     }

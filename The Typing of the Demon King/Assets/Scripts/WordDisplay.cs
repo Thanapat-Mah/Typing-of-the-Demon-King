@@ -34,13 +34,13 @@ public class WordDisplay : MonoBehaviour
             typedText = typedText+realText[i];
             if(i == typeIndex)
             {
-                typedText = typedText+"</color>";
+                typedText = typedText+"</color>"+"<color=red>|</color>";
             }
         }
         text.text = typedText+"</b>";
     }
 
-    public void RemovWord ()
+    public void RemoveWord ()
     {
         Destroy( transform.parent.gameObject);
     }
