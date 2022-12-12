@@ -401,7 +401,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: c0afb69e4b81e694c8300375babcc810, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.3137255}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -507,7 +507,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_TargetDisplay: 0
 --- !u!1 &444857058
 GameObject:
@@ -2067,7 +2067,6 @@ GameObject:
   - component: {fileID: 2024397199}
   - component: {fileID: 2024397200}
   - component: {fileID: 2024397201}
-  - component: {fileID: 2024397202}
   m_Layer: 0
   m_Name: WordManager
   m_TagString: Untagged
@@ -2180,18 +2179,6 @@ MonoBehaviour:
   spawnPoint4: {fileID: 0}
   spawnPoint5: {fileID: 0}
   centerPoint: {fileID: 0}
---- !u!114 &2024397202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2024397195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1789de3ba2526b34489c7aedccd44672, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2130704605
 PrefabInstance:
   m_ObjectHideFlags: 0
