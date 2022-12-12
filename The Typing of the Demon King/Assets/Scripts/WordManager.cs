@@ -42,6 +42,8 @@ public class WordManager : MonoBehaviour
     {
         AddWord();
         AddWord();
+        // StatManager.Instance.StartCalculateStatistic();
+        TimeManager.Instance.StartTimer();
     }
 
     private void Update()
@@ -62,6 +64,7 @@ public class WordManager : MonoBehaviour
                 break;
             }
         }
+        // Debug.Log(TimeManager.Instance.GetTime());
     }
 
     //Add word to the game scene
@@ -100,6 +103,7 @@ public class WordManager : MonoBehaviour
     //When typing function
     public void TypeLetter (char letter)
     {
+        StatManager.Instance.AddTypedEntries();
         //For typing activeword
         if(hasActiveWord)
         {
@@ -108,6 +112,10 @@ public class WordManager : MonoBehaviour
             if(activeWord.GetNextLetter() == letter)
             {
                 activeWord.TypeLetter();
+            }
+            else
+            {
+                StatManager.Instance.AddErrors();
             }
         }
         //When finish the whole activeword, change hasactiveword to false and remove activeword from the "words" list
@@ -145,6 +153,7 @@ public class WordManager : MonoBehaviour
                 monsters.RemoveAt(0);
             }
         }
+        StatManager.Instance.CalculateStatistic();
     }
 
     public char GetNextLetter()

@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5e979220-1116-419b-a63b-aa5d3c3fb8cf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.The Typing of the Demon King/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The Typing of the Demon King/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Gameplay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/ChangeScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/ChangeScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TimeManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TimeManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WordManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WordManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +20,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/StatManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b4c3e0c01b884114a083ddbfa3a0cadf7400/25/76ebe57d/Input.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/StatManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -79,7 +86,7 @@
       <updated>1667996483321</updated>
       <workItem from="1667996493375" duration="697000" />
       <workItem from="1668015900284" duration="1707000" />
-      <workItem from="1670817257338" duration="1973000" />
+      <workItem from="1670817257338" duration="10813000" />
     </task>
     <servers />
   </component>

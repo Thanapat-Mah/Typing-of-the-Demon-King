@@ -15,6 +15,7 @@ public class TimeManager : MonoBehaviour
         else 
         { 
             Instance = this; 
+            DontDestroyOnLoad(gameObject);
         }
     }
     
@@ -29,6 +30,7 @@ public class TimeManager : MonoBehaviour
         {
             _time += Time.deltaTime;
         }
+        // Debug.Log(_time);
     }
     
     public void StartTimer()
