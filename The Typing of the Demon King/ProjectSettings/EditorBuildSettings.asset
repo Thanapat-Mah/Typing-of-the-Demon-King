@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PracticeGameplay.unity
     guid: e7a194ffae219f744acc117444f34b99
+  - enabled: 1
+    path: Assets/Scenes/StatisticScene.unity
+    guid: 24560a5d7685fb04eae778bf897a4023
   m_configObjects: {}

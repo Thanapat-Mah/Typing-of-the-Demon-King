@@ -43,6 +43,9 @@ public class WordManager : MonoBehaviour
     public bool missSpell = false;
     private int tempboss = 0;
 
+    [SerializeField] private ChangeScene changeScene;
+    public static bool EasyBossDefeated = false;
+
     //Start game word
     private void Start()
     {
@@ -170,6 +173,8 @@ public class WordManager : MonoBehaviour
                 StartCoroutine(monsters[0].RemoveMonster());
                 // monsters[0].RemoveMonster();
                 monsters.RemoveAt(0);
+                EasyBossDefeated = true;
+                changeScene.OnClick_MoveToScene("ResultScene");
             }
         }
         if(hasActiveWord)
