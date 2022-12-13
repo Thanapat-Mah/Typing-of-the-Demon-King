@@ -14,6 +14,8 @@ public class healthBar : MonoBehaviour
     private float playerHealth;
     private float attackTime;
     private float currentTime;
+    public static bool GameOver = false;
+    [SerializeField] private ChangeScene changeScene;
 
     private void Start()
     {
@@ -27,7 +29,12 @@ public class healthBar : MonoBehaviour
         {
             currentTime = attackTime;
             healthSlider.value = playerHealth;
-            fill.color = gradient.Evaluate(playerHealth);
+            fill.color = gradient.Evaluate(healthSlider.normalizedValue);
+            if (playerHealth <= 0)
+            {
+                GameOver = true;
+                changeScene.OnClick_MoveToScene("ResultScene");
+            }
         }
     }
 

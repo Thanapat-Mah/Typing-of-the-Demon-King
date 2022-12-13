@@ -37,6 +37,8 @@ public class WordManager : MonoBehaviour
     //Setting maximum number on scene
     private int maximumMonster = 3;
 
+    public static bool EasyBossDefeated = false;
+
     //Start game word
     private void Start()
     {
@@ -153,6 +155,7 @@ public class WordManager : MonoBehaviour
                 StartCoroutine(monsters[0].RemoveMonster());
                 // monsters[0].RemoveMonster();
                 monsters.RemoveAt(0);
+                EasyBossDefeated = true;
             }
         }
         //if(WaveManager._isGameRun)

@@ -61,7 +61,7 @@ public class UIController : MonoBehaviour
             waveText.text = "Boss";
         }
         AccuracyText.text = StatManager.Instance.GetAccuracy().ToString()+" %";
-        WPMText.text = StatManager.Instance.GetNetWpm().ToString();
+        WPMText.text = StatManager.Instance.GetRawWpm().ToString();
 
         if(MonsterManager.hurt)
         {

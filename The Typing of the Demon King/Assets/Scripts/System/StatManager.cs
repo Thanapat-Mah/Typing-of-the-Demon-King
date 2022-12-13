@@ -11,12 +11,6 @@ public class StatManager : MonoBehaviour
     private float _rawWpm;
     
     private float _netWpm;
-    
-    private float _maxAccuracy = 0;
-    
-    private float _maxRawWpm = 0;
-    
-    private float _maxNetWpm = 0;
 
     private float _typedEntries;
     
@@ -58,14 +52,18 @@ public class StatManager : MonoBehaviour
     
     private void Update()
     {
-        
+        if (_accuracy < 0) _accuracy = 0;
+        if (_rawWpm < 0) _rawWpm = 0;
+        if (_netWpm < 0) _netWpm = 0;
+        if (_typedEntries < 0) _typedEntries = 0;
+        if (_errors < 0) _errors = 0;
     }
     
     public void StartCalculateStatistic()
     {
         _rawWpm = 0;
         _netWpm = 0;
-        _accuracy = 100;
+        _accuracy = 0;
         _typedEntries = 0;
         _errors = 0;
         enabled = true;
@@ -75,18 +73,12 @@ public class StatManager : MonoBehaviour
     {
         _accuracy = ((_typedEntries - _errors) / _typedEntries) * 100;
         _accuracy = Mathf.Round(_accuracy);
-        if (_accuracy > _maxAccuracy)
-            _maxAccuracy = _accuracy;
         
         _rawWpm = (_typedEntries / 5) / (TimeManager.Instance.GetTime() / 60);
         _rawWpm = (int)Mathf.Round(_rawWpm);
-        if (_rawWpm > _maxRawWpm)
-            _maxRawWpm = _rawWpm;
         
         _netWpm = ((_typedEntries / 5) - _errors) / (TimeManager.Instance.GetTime() / 60);
         _netWpm = (int)Mathf.Round(_netWpm);
-        if (_netWpm > _maxNetWpm)
-            _maxNetWpm = _netWpm;
     }
 
     public float GetAccuracy()
@@ -105,24 +97,6 @@ public class StatManager : MonoBehaviour
     {
         // Debug.Log("_netWpm = " + _netWpm);
         return _netWpm;
-    }
-    
-    public float GetMaxAccuracy()
-    {
-        // Debug.Log("_accuracy = " + _accuracy);
-        return _maxAccuracy;
-    }
-
-    public float GetMaxRawWpm()
-    {
-        // Debug.Log("_rawWpm = " + _rawWpm);
-        return _maxRawWpm; 
-    }
-    
-    public float GetMaxNetWpm()
-    {
-        // Debug.Log("_netWpm = " + _netWpm);
-        return _maxNetWpm;
     }
 
     public void AddTypedEntries()
@@ -190,5 +164,25 @@ public class StatManager : MonoBehaviour
     public float GetMaxOverallNetWpm()
     {
         return _netWpmList.Max();
+    }
+    
+    public float GetTypeEntries()
+    {
+        return _typedEntries;
+    }
+    
+    public float GetErrors()
+    {
+        return _errors;
+    }
+    
+    public float GetTotalTypeEntries()
+    {
+        return _totalTypedEntries;
+    }
+    
+    public float GetTotalErrors()
+    {
+        return _totalErrors;
     }
 }

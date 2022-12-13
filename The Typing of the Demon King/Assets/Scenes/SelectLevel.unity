@@ -727,8 +727,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285592319
-  m_fontColor: {r: 1, g: 0.94897085, b: 0.43867922, a: 1}
+    rgba: 1687590550
+  m_fontColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 0.39215687}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -864,8 +864,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282729983
-  m_fontColor: {r: 1, g: 0.2688679, b: 0.2688679, a: 1}
+    rgba: 1687590550
+  m_fontColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 0.39215687}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1515,7 +1515,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614213758}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -1757,6 +1757,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6905721656094905810, guid: 945f19cb4b72dac45a33270789882ab1, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1310144824}
     - target: {fileID: 6905721657794263491, guid: 945f19cb4b72dac45a33270789882ab1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

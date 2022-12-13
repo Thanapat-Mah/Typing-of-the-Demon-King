@@ -2238,6 +2238,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6905721656094905810, guid: 945f19cb4b72dac45a33270789882ab1, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 463153897}
     - target: {fileID: 6905721657794263491, guid: 945f19cb4b72dac45a33270789882ab1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2837,15 +2841,15 @@ MonoBehaviour:
   gradient:
     serializedVersion: 2
     key0: {r: 1, g: 0, b: 0, a: 1}
-    key1: {r: 1, g: 0.9739698, b: 0, a: 1}
-    key2: {r: 0.4962914, g: 1, b: 0, a: 0}
+    key1: {r: 1, g: 1, b: 0, a: 1}
+    key2: {r: 0, g: 1, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 9830
-    ctime1: 32768
+    ctime0: 13685
+    ctime1: 33423
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -2866,6 +2870,7 @@ MonoBehaviour:
   fill: {fileID: 537831184}
   monsterAttackTime: 0.6
   bossAttackTime: 1.1
+  changeScene: {fileID: 1024689401}
 --- !u!114 &1287745015
 MonoBehaviour:
   m_ObjectHideFlags: 0
