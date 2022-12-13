@@ -13,7 +13,7 @@ public class KeyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        key = 0;
+        key = 3;
     }
 
     // Update is called once per frame

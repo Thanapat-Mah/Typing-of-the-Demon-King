@@ -9,6 +9,7 @@ public class MonsterManager : MonoBehaviour
     public healthBar healthBar;
     //How long enemy wait before attack
     public float _idleTime = 10f;
+    public float _BossidleTime = 7f;
     //How long enemy warn player before attack
     public float _warningTime = 1f;
     //How long enemy warn player before attack
@@ -16,7 +17,7 @@ public class MonsterManager : MonoBehaviour
     public bool hurt = false;
     public int monsterDamage = 10;
     public int BossDamage = 20;
-    private float AttackTime;
+    private float tempIdleTime;
 
     //parameter for counting time
     private static float _remainingTime;
@@ -29,10 +30,19 @@ public class MonsterManager : MonoBehaviour
         warnSwitch = false;
         warning = 0f;
         hurt = false;
+        tempIdleTime = _idleTime;
     }
 
     private void Update()
     {
+        if(WordManager.BossMode)
+        {
+            _idleTime = _BossidleTime;
+        }
+        else
+        {
+            _idleTime = tempIdleTime;
+        }
         // StartCoroutine(MonsterAttack());
         if(WaveManager._isGameRun)
         {

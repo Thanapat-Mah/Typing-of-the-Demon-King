@@ -41,6 +41,7 @@ public class WordManager : MonoBehaviour
     private int BossWordCount = 0;
     public int errorDamage = 1;
     public bool missSpell = false;
+    private int tempboss = 0;
 
     //Start game word
     private void Start()
@@ -155,14 +156,17 @@ public class WordManager : MonoBehaviour
         {
             hasActiveWord = false;
             words.Remove(activeWord);
-            AddNewMonster = true;
-            if(BossWordCount <= maximumBossWord)
+            //AddNewMonster = true;
+            if(BossWordCount < maximumBossWord)
             {
-                AddWord();
+                Word word = new Word(wordGenerator.GetBossRandomWord(),  wordSpawner.SpawnWord(10 + tempboss));
+                words.Add(word);
+                tempboss++;
                 BossWordCount++;
             }
             if(words.Count == 0)
             {
+                tempboss = 0;
                 StartCoroutine(monsters[0].RemoveMonster());
                 // monsters[0].RemoveMonster();
                 monsters.RemoveAt(0);
