@@ -155,6 +155,7 @@ public class WordManager : MonoBehaviour
                 monsters.RemoveAt(0);
             }
         }
+        //if(WaveManager._isGameRun)
         StatManager.Instance.CalculateStatistic();
     }
 
