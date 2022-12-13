@@ -2864,8 +2864,8 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 537831184}
-  monsterAttackTime: 0.7
-  bossAttackTime: 1
+  monsterAttackTime: 0.6
+  bossAttackTime: 1.1
 --- !u!114 &1287745015
 MonoBehaviour:
   m_ObjectHideFlags: 0
