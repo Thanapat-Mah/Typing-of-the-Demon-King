@@ -4512,6 +4512,7 @@ MonoBehaviour:
   practice: 0
   AllmonsterCount: 0
   maximumMonsterPerWave: 10
+  changeScene: {fileID: 1024689401}
 --- !u!4 &2024397197
 Transform:
   m_ObjectHideFlags: 0
