@@ -35,10 +35,8 @@ public class WaveManager : MonoBehaviour
         if(!_isGameRun)
         {
             cooldown += Time.deltaTime;
-            Debug.Log(cooldown);
             if(cooldown > waveCoolDown)
             {
-                Debug.Log("EndCoolDown");
                 WordManager.AllmonsterCount = 0;
                 //Check number of key
                 if(KeyManager.getKeyNum() == KeyManager.getMaxKeyNum())
@@ -55,7 +53,6 @@ public class WaveManager : MonoBehaviour
     //go to next wave
     public void NextWave()
     {
-        Debug.Log("NextWave");
         numberOfWaveCount++;
         cooldown = 0f;
         _isGameRun = false;
@@ -63,7 +60,6 @@ public class WaveManager : MonoBehaviour
 
     public void StartBossWave()
     {
-        Debug.Log("BossWave");
         WordManager.BossMode = true;
         WordManager.AddBossWord();
     }

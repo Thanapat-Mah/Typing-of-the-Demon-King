@@ -6,14 +6,16 @@ public class MonsterManager : MonoBehaviour
 {
     public WordManager WordManager;
     public WaveManager WaveManager;
+    public healthBar healthBar;
     //How long enemy wait before attack
     public float _idleTime = 10f;
-    //How long enemy stay in attack mode
-    public float _attackingTime = 5f;
     //How long enemy warn player before attack
     public float _warningTime = 1f;
     //How long enemy warn player before attack
     public float _warningfrequency = 4f;
+    public bool hurt = false;
+    public int monsterDamage = 10;
+    public int BossDamage = 20;
 
     //parameter for counting time
     private static float _remainingTime;
@@ -25,6 +27,7 @@ public class MonsterManager : MonoBehaviour
         _remainingTime = 0f;
         warnSwitch = false;
         warning = 0f;
+        hurt = false;
     }
 
     private void Update()
@@ -39,7 +42,16 @@ public class MonsterManager : MonoBehaviour
         if(WaveManager._isGameRun && WordManager.hasActiveWord && _remainingTime >= _idleTime)
         {
             WordManager.activeMonster.Attack();
-            _remainingTime -= (_remainingTime + _attackingTime);
+            if(WordManager.BossMode)
+            {
+                healthBar.DamageHealth(BossDamage);
+            }
+            else
+            {
+                healthBar.DamageHealth(monsterDamage);
+            }
+            hurt = true;
+            _remainingTime -=_remainingTime;
         //if it almost attack time do a warning
         }else if(WaveManager._isGameRun && WordManager.hasActiveWord && _remainingTime >= (_idleTime - _warningTime)) 
         {
