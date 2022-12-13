@@ -9,7 +9,11 @@ public class healthBar : MonoBehaviour
     public Slider healthSlider;
     public Gradient gradient;
     public Image fill;
+    public float monsterAttackTime = 1f;
+    public float bossAttackTime = 2f;
     private float playerHealth;
+    private float attackTime;
+    private float currentTime;
 
     private void Start()
     {
@@ -18,7 +22,13 @@ public class healthBar : MonoBehaviour
 
     private void Update()
     {
-        healthSlider.value = playerHealth;
+        currentTime -= Time.deltaTime;
+        if (currentTime <= 0)
+        {
+            currentTime = attackTime;
+            healthSlider.value = playerHealth;
+            fill.color = gradient.Evaluate(playerHealth);
+        }
     }
 
     public void SetMaxHealth(int health)
@@ -31,13 +41,24 @@ public class healthBar : MonoBehaviour
     public void SetHealth(int health)
     {
         playerHealth = health;
-        fill.color = gradient.Evaluate(healthSlider.normalizedValue);
+        fill.color = gradient.Evaluate(playerHealth);
     }
+    public void MonsterDamage()
+    {
+        attackTime = monsterAttackTime;
+    }
+    
+    public void BossDamage()
+    {
+        attackTime = bossAttackTime;
+    }
+    
     public void DamageHealth(int damage)
     {
+        currentTime = attackTime;
         playerHealth -= damage;
-        fill.color = gradient.Evaluate(healthSlider.normalizedValue);
     }
+    
     public float getHealth()
     {
         return playerHealth;

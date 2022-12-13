@@ -48,11 +48,13 @@ public class MonsterManager : MonoBehaviour
             // AttackTime = WordManager.activeMonster.GetAttackAnimationLength();
             if(WordManager.BossMode)
             {
+                healthBar.BossDamage();
                 healthBar.DamageHealth(BossDamage);
                 Debug.Log("damaged from boss");
             }
             else
             {
+                healthBar.MonsterDamage();
                 healthBar.DamageHealth(monsterDamage);
                 Debug.Log("damaged from monster");
 

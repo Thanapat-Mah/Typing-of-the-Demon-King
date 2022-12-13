@@ -2833,7 +2833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e139535d2e82f9488ca71b9f74ac882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1287745017}
+  healthSlider: {fileID: 1287745017}
   gradient:
     serializedVersion: 2
     key0: {r: 1, g: 0, b: 0, a: 1}
@@ -2864,6 +2864,8 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 537831184}
+  monsterAttackTime: 0.7
+  bossAttackTime: 1
 --- !u!114 &1287745015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4646,6 +4648,7 @@ MonoBehaviour:
   cooldown: {fileID: 1462657890}
   AccuracyText: {fileID: 1487788185}
   blood: {fileID: 701695110}
+  bloodAnimator: {fileID: 0}
   bloodOverlay: 4
 --- !u!114 &2024397205
 MonoBehaviour:
