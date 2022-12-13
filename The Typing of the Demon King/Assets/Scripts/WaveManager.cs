@@ -6,18 +6,14 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     public WordManager WordManager;
+    public KeyManager KeyManager;
     //Number of the current wave
     public int numberOfWaveCount = 1;
     public float waveCoolDown = 10f;
-    //Key the player get
-    public int key = 0;
-    //Maximum Key the player get for boss
-    public int MaxKey = 3;
-
 
     //is the game running
     public bool _isGameRun;
-    private float cooldown = 0f;
+    public float cooldown = 0f;
     private void Start()
     {
         _isGameRun = true;
@@ -39,13 +35,11 @@ public class WaveManager : MonoBehaviour
         if(!_isGameRun)
         {
             cooldown += Time.deltaTime;
-            Debug.Log(cooldown);
             if(cooldown > waveCoolDown)
             {
-                Debug.Log("EndCoolDown");
                 WordManager.AllmonsterCount = 0;
                 //Check number of key
-                if(key == MaxKey)
+                if(KeyManager.getKeyNum() == KeyManager.getMaxKeyNum())
                 {
                     StartBossWave();
                 } else {
@@ -59,7 +53,6 @@ public class WaveManager : MonoBehaviour
     //go to next wave
     public void NextWave()
     {
-        Debug.Log("NextWave");
         numberOfWaveCount++;
         cooldown = 0f;
         _isGameRun = false;
@@ -67,7 +60,6 @@ public class WaveManager : MonoBehaviour
 
     public void StartBossWave()
     {
-        Debug.Log("BossWave");
         WordManager.BossMode = true;
         WordManager.AddBossWord();
     }
@@ -75,14 +67,5 @@ public class WaveManager : MonoBehaviour
     public int getWaveNum()
     {
         return numberOfWaveCount;
-    }
-
-    public void getKey()
-    {
-        key++;
-    }
-    public int getKeyNum()
-    {
-        return key;
     }
 }

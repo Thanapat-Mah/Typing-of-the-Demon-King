@@ -70,7 +70,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b1d0d4126b352f849a3c56376d0ba5bc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d056e3d014fa8544390096d3f2462b89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Image: {fileID: 4714329164101449702}
-  inactiveSprite: {fileID: 21300000, guid: b1d0d4126b352f849a3c56376d0ba5bc, type: 3}
+  inactiveSprite: {fileID: 21300000, guid: d056e3d014fa8544390096d3f2462b89, type: 3}
   activeSprite: {fileID: 21300000, guid: c0afb69e4b81e694c8300375babcc810, type: 3}
   attackSprite: {fileID: 21300000, guid: cca71e7ec3e93264e83b6b71026cf660, type: 3}
 --- !u!1 &7628865544252734090
