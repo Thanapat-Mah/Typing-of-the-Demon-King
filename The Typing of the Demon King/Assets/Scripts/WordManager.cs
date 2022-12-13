@@ -20,6 +20,7 @@ public class WordManager : MonoBehaviour
     public WordGenerator wordGenerator;
     //Reference to monster
     public MonsterSpawner monsterSpawner;
+    public healthBar healthBar;
     //use to signal other that the new monster is spawn
     public bool AddNewMonster = false;
     //use to signal other that the new monster is spawn
@@ -36,6 +37,10 @@ public class WordManager : MonoBehaviour
     public int maximumMonsterPerWave = 10;
     //Setting maximum number on scene
     private int maximumMonster = 3;
+    private int maximumBossWord = 8;
+    private int BossWordCount = 0;
+    public int errorDamage = 1;
+    public bool missSpell = false;
 
     //Start game word
     private void Start()
@@ -95,6 +100,7 @@ public class WordManager : MonoBehaviour
         Monster monster = monsterSpawner.SpawnMonster(11);
         monsters.Add(monster);
         monsterCount++;
+        BossWordCount = 4;
         if(monsterCount >= maximumMonster){
             monsterCount = 0;
         }
@@ -116,6 +122,8 @@ public class WordManager : MonoBehaviour
             else
             {
                 StatManager.Instance.AddErrors();
+                healthBar.DamageHealth(errorDamage);
+                missSpell = true;
             }
         }
         //When finish the whole activeword, change hasactiveword to false and remove activeword from the "words" list
@@ -148,6 +156,11 @@ public class WordManager : MonoBehaviour
             hasActiveWord = false;
             words.Remove(activeWord);
             AddNewMonster = true;
+            if(BossWordCount <= maximumBossWord)
+            {
+                AddWord();
+                BossWordCount++;
+            }
             if(words.Count == 0)
             {
                 StartCoroutine(monsters[0].RemoveMonster());
@@ -155,8 +168,10 @@ public class WordManager : MonoBehaviour
                 monsters.RemoveAt(0);
             }
         }
-        //if(WaveManager._isGameRun)
-        StatManager.Instance.CalculateStatistic();
+        if(hasActiveWord)
+        {
+            StatManager.Instance.CalculateStatistic();
+        }
     }
 
     public char GetNextLetter()
