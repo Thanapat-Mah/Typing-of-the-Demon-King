@@ -38,6 +38,11 @@ public class WaveManager : MonoBehaviour
             if(cooldown > waveCoolDown)
             {
                 WordManager.AllmonsterCount = 0;
+                if(StatManager.Instance.GetRawWpm() >= 30)
+                {
+                    KeyManager.addKey();
+                }
+                StatManager.Instance.StartCalculateStatistic();
                 //Check number of key
                 if(KeyManager.getKeyNum() == KeyManager.getMaxKeyNum())
                 {

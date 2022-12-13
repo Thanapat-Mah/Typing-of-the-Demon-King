@@ -66,6 +66,7 @@ public class StatManager : MonoBehaviour
         _accuracy = 0;
         _typedEntries = 0;
         _errors = 0;
+        TimeManager.Instance.StartTimer();
         enabled = true;
     }
 
