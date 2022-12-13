@@ -1194,7 +1194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bee10448b8bcc0438e352a1cf7bfa00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monster: {fileID: 8880858055529550716, guid: b3041cb5cfa96174bbcdb91ca4fc04cd, type: 3}
+  monster: {fileID: 6013622712218952720, guid: b9f30057d9e4f024491da5b3b3ea015c, type: 3}
   Boss: {fileID: 6939629739365819444, guid: 18136f4dcd803d44485df7d54658eb77, type: 3}
   spawnPoint1: {fileID: 1439516077}
   spawnPoint2: {fileID: 1882763477}

@@ -39,6 +39,7 @@ public class MonsterManager : MonoBehaviour
         if(WaveManager._isGameRun && WordManager.hasActiveWord && _remainingTime >= _idleTime)
         {
             WordManager.activeMonster.Attack();
+            WordManager.activeMonster.AttackAnimation();
             _remainingTime -= (_remainingTime + _attackingTime);
         //if it almost attack time do a warning
         }else if(WaveManager._isGameRun && WordManager.hasActiveWord && _remainingTime >= (_idleTime - _warningTime)) 
@@ -51,8 +52,8 @@ public class MonsterManager : MonoBehaviour
                 warning = 0f;
                 warnSwitch = true;
                 WordManager.activeMonster.Attack();
-            //if the warnswitch is on and warning is in the frequency turn it off and set the state of monster to active(orange)
             }
+            //if the warnswitch is on and warning is in the frequency turn it off and set the state of monster to active(orange)
             else if(warnSwitch && warning > _warningTime/_warningfrequency)
             {
                 warning = 0f;
