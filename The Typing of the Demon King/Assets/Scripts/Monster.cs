@@ -21,6 +21,10 @@ public class Monster : MonoBehaviour
     {
         _animator.SetTrigger("Attack");
     }
+    public float GetAttackAnimationLength()
+    {
+        return _animator.GetCurrentAnimatorStateInfo(0).length;
+    }
     public void Active ()
     {
         transform.parent.GetComponentInChildren<Border>().SetActive();

@@ -16,6 +16,7 @@ public class UIController : MonoBehaviour
     public GameObject cooldown;
     public TextMeshProUGUI AccuracyText;
     public SpriteRenderer blood;
+    public Animator bloodAnimator;
     private float TempCoolDown;
     private int TempmonsterRemain;
     //How long player stay in bloodOverlay
@@ -28,7 +29,9 @@ public class UIController : MonoBehaviour
     void Start()
     {
         cooldown.SetActive(false);
-        SetBloodOverlayAlpha(0f);
+        bloodAnimator = blood.gameObject.GetComponent<Animator>();
+        // SetBloodOverlayAlpha(0f);
+        
     }
 
     // Update is called once per frame
@@ -62,13 +65,17 @@ public class UIController : MonoBehaviour
 
         if(MonsterManager.hurt)
         {
-            float temp = 63.75f*tempTime;
-            float alpha = 255f-temp;
-            SetBloodOverlayAlpha(alpha);
-            Debug.Log(blood.color);
+            bloodAnimator.SetBool("fade_in", true);
+            // Debug.Log("hurt");
+            // float temp = 63.75f*tempTime;
             tempTime += Time.deltaTime;
+            // float alpha = 255f-temp;
+            // SetBloodOverlayAlpha(alpha);
+            // Debug.Log(blood.color);
             if(tempTime >= bloodOverlay)
             {
+                bloodAnimator.SetTrigger("fade_out");
+                bloodAnimator.SetBool("fade_in", false);
                 MonsterManager.hurt = false;
                 tempTime = 0f;
             }
