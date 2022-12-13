@@ -8,13 +8,13 @@ public class StatManager : MonoBehaviour
     
     private float _accuracy;
     
-    private float _grossWpm;
+    private float _rawWpm;
     
     private float _netWpm;
     
     private float _maxAccuracy = 0;
     
-    private float _maxGrossWpm = 0;
+    private float _maxRawWpm = 0;
     
     private float _maxNetWpm = 0;
 
@@ -28,13 +28,13 @@ public class StatManager : MonoBehaviour
     
     private float _averageAccuracy = 0;
     
-    private float _averageGrossWpm = 0;
+    private float _averageRawWpm = 0;
     
     private float _averageNetWpm = 0;
 
     private List<float> _accuracyList = new List<float>();
     
-    private List<float> _grossWpmList = new List<float>();
+    private List<float> _rawWpmList = new List<float>();
     
     private List<float> _netWpmList = new List<float>();
 
@@ -63,7 +63,7 @@ public class StatManager : MonoBehaviour
     
     public void StartCalculateStatistic()
     {
-        _grossWpm = 0;
+        _rawWpm = 0;
         _netWpm = 0;
         _accuracy = 100;
         _typedEntries = 0;
@@ -78,10 +78,10 @@ public class StatManager : MonoBehaviour
         if (_accuracy > _maxAccuracy)
             _maxAccuracy = _accuracy;
         
-        _grossWpm = (_typedEntries / 5) / (TimeManager.Instance.GetTime() / 60);
-        _grossWpm = (int)Mathf.Round(_grossWpm);
-        if (_grossWpm > _maxGrossWpm)
-            _maxGrossWpm = _grossWpm;
+        _rawWpm = (_typedEntries / 5) / (TimeManager.Instance.GetTime() / 60);
+        _rawWpm = (int)Mathf.Round(_rawWpm);
+        if (_rawWpm > _maxRawWpm)
+            _maxRawWpm = _rawWpm;
         
         _netWpm = ((_typedEntries / 5) - _errors) / (TimeManager.Instance.GetTime() / 60);
         _netWpm = (int)Mathf.Round(_netWpm);
@@ -95,10 +95,10 @@ public class StatManager : MonoBehaviour
         return _accuracy;
     }
 
-    public float GetGrossWpm()
+    public float GetRawWpm()
     {
-        // Debug.Log("_grossWpm = " + _grossWpm);
-        return _grossWpm; 
+        // Debug.Log("_rawWpm = " + _rawWpm);
+        return _rawWpm; 
     }
     
     public float GetNetWpm()
@@ -113,10 +113,10 @@ public class StatManager : MonoBehaviour
         return _maxAccuracy;
     }
 
-    public float GetMaxGrossWpm()
+    public float GetMaxRawWpm()
     {
-        // Debug.Log("_grossWpm = " + _grossWpm);
-        return _maxGrossWpm; 
+        // Debug.Log("_rawWpm = " + _rawWpm);
+        return _maxRawWpm; 
     }
     
     public float GetMaxNetWpm()
@@ -142,9 +142,9 @@ public class StatManager : MonoBehaviour
     //     _accuracyList.Add(_accuracy);
     // }
     //
-    // public void AddGrossWpmToList()
+    // public void AddRawWpmToList()
     // {
-    //     _grossWpmList.Add(_grossWpm);
+    //     _rawWpmList.Add(_rawWpm);
     // }
     //
     // public void AddNetWpmToList()
@@ -155,10 +155,10 @@ public class StatManager : MonoBehaviour
     public void CalculateAverageStatistic()
     {
         _accuracyList.Add(_accuracy);
-        _grossWpmList.Add(_grossWpm);
+        _rawWpmList.Add(_rawWpm);
         _netWpmList.Add(_netWpm);
         _averageAccuracy = Mathf.Round(_accuracyList.Sum() / _accuracyList.Count);
-        _averageGrossWpm = Mathf.Round(_grossWpmList.Sum() / _grossWpmList.Count);
+        _averageRawWpm = Mathf.Round(_rawWpmList.Sum() / _rawWpmList.Count);
         _averageNetWpm = Mathf.Round(_netWpmList.Sum() / _netWpmList.Count);
     }
 
@@ -167,9 +167,9 @@ public class StatManager : MonoBehaviour
         return _averageAccuracy;
     }
 
-    public float GetAverageGrossWpm()
+    public float GetAverageRawWpm()
     {
-        return _averageGrossWpm;
+        return _averageRawWpm;
     }
 
     public float GetAverageNetWpm()
@@ -182,9 +182,9 @@ public class StatManager : MonoBehaviour
         return _accuracyList.Max();
     }
 
-    public float GetMaxOverallGrossWpm()
+    public float GetMaxOverallRawWpm()
     {
-        return _grossWpmList.Max();
+        return _rawWpmList.Max();
     }
 
     public float GetMaxOverallNetWpm()
