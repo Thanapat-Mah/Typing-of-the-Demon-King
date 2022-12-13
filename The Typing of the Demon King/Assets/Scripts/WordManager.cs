@@ -123,7 +123,8 @@ public class WordManager : MonoBehaviour
         {
             hasActiveWord = false;
             words.Remove(activeWord);
-            monsters[0].RemoveMonster();
+            StartCoroutine(monsters[0].RemoveMonster());
+            // monsters[0].RemoveMonster();
             monsters.RemoveAt(0);
             if(practice)
             {
@@ -149,10 +150,12 @@ public class WordManager : MonoBehaviour
             AddNewMonster = true;
             if(words.Count == 0)
             {
-                monsters[0].RemoveMonster();
+                StartCoroutine(monsters[0].RemoveMonster());
+                // monsters[0].RemoveMonster();
                 monsters.RemoveAt(0);
             }
         }
+        //if(WaveManager._isGameRun)
         StatManager.Instance.CalculateStatistic();
     }
 
