@@ -54,6 +54,7 @@ public class SFXMusic : MonoBehaviour
         if(WordManager.missSpellSFX)
         {
             MissSpell.Play();
+            PlayerHurt.Play();
             WordManager.missSpellSFX = false;
         }
         if(WordManager.MonsterDied)
