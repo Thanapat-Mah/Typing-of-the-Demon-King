@@ -15,7 +15,7 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI coolDownText;
     public GameObject cooldown;
     public TextMeshProUGUI AccuracyText;
-    public SpriteRenderer blood;
+    public GameObject blood;
     public Animator bloodAnimator;
     private float TempCoolDown;
     private int TempmonsterRemain;
@@ -29,7 +29,7 @@ public class UIController : MonoBehaviour
     void Start()
     {
         cooldown.SetActive(false);
-        bloodAnimator = blood.gameObject.GetComponent<Animator>();
+        bloodAnimator = blood.GetComponent<Animator>();
         // SetBloodOverlayAlpha(0f);
         
     }
@@ -44,15 +44,13 @@ public class UIController : MonoBehaviour
                 cooldown.SetActive(false);
             }
             TempmonsterRemain = WordManager.maximumMonsterPerWave - WordManager.AllmonsterCount;
-            waveText.text = WaveManager.numberOfWaveCount.ToString();
-            remainingMonsterText.text = TempmonsterRemain.ToString();
         }
         else if(!WordManager.BossMode && !WaveManager._isGameRun)
         {
             cooldown.SetActive(true);
             TempCoolDown = WaveManager.waveCoolDown-WaveManager.cooldown;
-            waveText.text = "Waiting for Next Wave";
-            coolDownText.text = TempCoolDown.ToString("F0")+" Sec";
+            TempmonsterRemain = 0;
+            // waveText.text = "Waiting for Next Wave";
         } else {
             if(cooldown)
             {
@@ -62,6 +60,9 @@ public class UIController : MonoBehaviour
         }
         AccuracyText.text = StatManager.Instance.GetAccuracy().ToString()+" %";
         WPMText.text = StatManager.Instance.GetRawWpm().ToString();
+        waveText.text = WaveManager.numberOfWaveCount.ToString();
+        coolDownText.text = TempCoolDown.ToString("F0")+" Sec";
+        remainingMonsterText.text = TempmonsterRemain.ToString();
 
         if(MonsterManager.hurt || WordManager.missSpell)
         {
@@ -84,7 +85,6 @@ public class UIController : MonoBehaviour
                 {
                     WordManager.missSpell = false;
                 }
-                
                 tempTime = 0f;
             }
         } 

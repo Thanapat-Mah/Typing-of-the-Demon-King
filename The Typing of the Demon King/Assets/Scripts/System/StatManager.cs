@@ -15,10 +15,6 @@ public class StatManager : MonoBehaviour
     private float _typedEntries;
     
     private float _errors;
-    
-    private float _totalTypedEntries;
-    
-    private float _totalErrors;
 
     private List<float> _waveAccuracyList = new List<float>();
     
@@ -31,7 +27,12 @@ public class StatManager : MonoBehaviour
     private float _averageWaveRawWpm = 0;
     
     private float _averageWaveNetWpm = 0;
+    
+    private float _waveTypedEntries;
+    
+    private float _waveErrors;
 
+    private float _waveTimeUsed;
 
     private List<float> _accuracyList = new List<float>();
     
@@ -44,6 +45,10 @@ public class StatManager : MonoBehaviour
     private float _averageTotalRawWpm = 0;
     
     private float _averageTotalNetWpm = 0;
+    
+    private float _totalTypedEntries;
+    
+    private float _totalErrors;
 
     public void Awake()
     {
@@ -72,7 +77,7 @@ public class StatManager : MonoBehaviour
         if (_errors < 0) _errors = 0;
     }
     
-    public void StartCalculateStatistic()
+    public void StartGame()
     {
         _accuracy = 0;
         _rawWpm = 0;
@@ -82,6 +87,17 @@ public class StatManager : MonoBehaviour
         _waveAccuracyList.Clear();
         _waveNetWpmList.Clear();
         _waveRawWpmList.Clear();
+        TimeManager.Instance.StartTimer();
+        enabled = true;
+    }
+    
+    public void StartNewWave()
+    {
+        _accuracy = 0;
+        _rawWpm = 0;
+        _netWpm = 0;
+        _typedEntries = 0;
+        _errors = 0;
         TimeManager.Instance.StartTimer();
         enabled = true;
     }
@@ -119,13 +135,11 @@ public class StatManager : MonoBehaviour
     public void AddTypedEntries()
     {
         _typedEntries += 1;
-        _totalTypedEntries += 1;
     }
     
     public void AddErrors()
     {
         _errors += 1;
-        _totalErrors += 1;
     }
 
     // public void AddAccuracyToList()
@@ -146,8 +160,12 @@ public class StatManager : MonoBehaviour
     public void AddWaveStatistic()
     {
         _waveAccuracyList.Add(_accuracy);
+        Debug.Log("add " + _accuracy + " to acc wave list");
         _waveRawWpmList.Add(_rawWpm);
         _waveNetWpmList.Add(_netWpm);
+        _waveTypedEntries += _typedEntries;
+        _waveErrors += _errors;
+        _waveTimeUsed += TimeManager.Instance.GetTime();
     }
     
     public void CalculateAverageWaveStatistic()
@@ -155,9 +173,6 @@ public class StatManager : MonoBehaviour
         _averageWaveAccuracy = Mathf.Round(_waveAccuracyList.Sum() / _waveAccuracyList.Count);
         _averageWaveRawWpm = Mathf.Round(_waveRawWpmList.Sum() / _waveRawWpmList.Count);
         _averageWaveNetWpm = Mathf.Round(_waveNetWpmList.Sum() / _waveNetWpmList.Count);
-        _accuracy = 0;
-        _rawWpm = 0;
-        _netWpm = 0;
     }
     
     public float GetAverageWaveAccuracy()
@@ -175,11 +190,28 @@ public class StatManager : MonoBehaviour
         return _averageTotalNetWpm;
     }
 
+    public float GetWaveTypedEntries()
+    {
+        return _waveTypedEntries;
+    }
+    
+    public float GetWaveErrors()
+    {
+        return _waveErrors;
+    }
+    
+    public float GetTimeUsed()
+    {
+        return _waveTimeUsed;
+    }
+
     public void CalculateAverageTotalStatistic()
     {
         _accuracyList.Add(_averageWaveAccuracy);
         _rawWpmList.Add(_averageWaveRawWpm);
         _netWpmList.Add(_averageWaveNetWpm);
+        _totalTypedEntries += _waveTypedEntries;
+        _totalErrors += _waveErrors;
         _averageTotalAccuracy = Mathf.Round(_accuracyList.Sum() / _accuracyList.Count);
         _averageTotalRawWpm = Mathf.Round(_rawWpmList.Sum() / _rawWpmList.Count);
         _averageTotalNetWpm = Mathf.Round(_netWpmList.Sum() / _netWpmList.Count);
