@@ -20,6 +20,7 @@ public class WordManager : MonoBehaviour
     public WordGenerator wordGenerator;
     //Reference to monster
     public MonsterSpawner monsterSpawner;
+    public healthBar healthBar;
     //use to signal other that the new monster is spawn
     public bool AddNewMonster = false;
     //use to signal other that the new monster is spawn
@@ -36,6 +37,11 @@ public class WordManager : MonoBehaviour
     public int maximumMonsterPerWave = 10;
     //Setting maximum number on scene
     private int maximumMonster = 3;
+    private int maximumBossWord = 8;
+    private int BossWordCount = 0;
+    public int errorDamage = 1;
+    public bool missSpell = false;
+    private int tempboss = 0;
 
     [SerializeField] private ChangeScene changeScene;
     public static bool EasyBossDefeated = false;
@@ -98,6 +104,7 @@ public class WordManager : MonoBehaviour
         Monster monster = monsterSpawner.SpawnMonster(11);
         monsters.Add(monster);
         monsterCount++;
+        BossWordCount = 4;
         if(monsterCount >= maximumMonster){
             monsterCount = 0;
         }
@@ -119,6 +126,8 @@ public class WordManager : MonoBehaviour
             else
             {
                 StatManager.Instance.AddErrors();
+                healthBar.DamageHealth(errorDamage);
+                missSpell = true;
             }
         }
         //When finish the whole activeword, change hasactiveword to false and remove activeword from the "words" list
@@ -150,9 +159,17 @@ public class WordManager : MonoBehaviour
         {
             hasActiveWord = false;
             words.Remove(activeWord);
-            AddNewMonster = true;
+            //AddNewMonster = true;
+            if(BossWordCount < maximumBossWord)
+            {
+                Word word = new Word(wordGenerator.GetBossRandomWord(),  wordSpawner.SpawnWord(10 + tempboss));
+                words.Add(word);
+                tempboss++;
+                BossWordCount++;
+            }
             if(words.Count == 0)
             {
+                tempboss = 0;
                 StartCoroutine(monsters[0].RemoveMonster());
                 // monsters[0].RemoveMonster();
                 monsters.RemoveAt(0);
@@ -160,8 +177,10 @@ public class WordManager : MonoBehaviour
                 changeScene.OnClick_MoveToScene("ResultScene");
             }
         }
-        //if(WaveManager._isGameRun)
-        StatManager.Instance.CalculateRawStatistic();
+        if(hasActiveWord)
+        {
+            StatManager.Instance.CalculateRawStatistic();
+        }        
     }
 
     public char GetNextLetter()

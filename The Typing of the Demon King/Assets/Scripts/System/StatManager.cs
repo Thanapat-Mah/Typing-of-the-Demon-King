@@ -82,6 +82,7 @@ public class StatManager : MonoBehaviour
         _waveAccuracyList.Clear();
         _waveNetWpmList.Clear();
         _waveRawWpmList.Clear();
+        TimeManager.Instance.StartTimer();
         enabled = true;
     }
 

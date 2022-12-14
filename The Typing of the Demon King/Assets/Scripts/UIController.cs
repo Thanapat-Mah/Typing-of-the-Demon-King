@@ -63,7 +63,7 @@ public class UIController : MonoBehaviour
         AccuracyText.text = StatManager.Instance.GetAccuracy().ToString()+" %";
         WPMText.text = StatManager.Instance.GetRawWpm().ToString();
 
-        if(MonsterManager.hurt)
+        if(MonsterManager.hurt || WordManager.missSpell)
         {
             bloodAnimator.SetBool("fade_in", true);
             // Debug.Log("hurt");
@@ -76,16 +76,17 @@ public class UIController : MonoBehaviour
             {
                 bloodAnimator.SetTrigger("fade_out");
                 bloodAnimator.SetBool("fade_in", false);
-                MonsterManager.hurt = false;
+                if(MonsterManager.hurt)
+                {
+                    MonsterManager.hurt = false;
+                }
+                if(WordManager.missSpell)
+                {
+                    WordManager.missSpell = false;
+                }
+                
                 tempTime = 0f;
             }
         } 
-    }
-
-    public void SetBloodOverlayAlpha(float value)
-    {
-        Color tmp = blood.color;
-        tmp.a = value;
-        blood.color = tmp;
     }
 }
