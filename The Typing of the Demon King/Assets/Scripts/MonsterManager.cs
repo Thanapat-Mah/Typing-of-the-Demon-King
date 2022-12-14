@@ -51,56 +51,52 @@ public class MonsterManager : MonoBehaviour
         
         ////////////////////////////////////for monster warning and attack //////////////////////////////////
         //if it time to attack
-        if(WaveManager._isGameRun && WordManager.hasActiveWord && _remainingTime >= _idleTime)
+        if(!WordManager.practice)
         {
-            WordManager.activeMonster.Attack();
-            WordManager.activeMonster.AttackAnimation();
-            // AttackTime = WordManager.activeMonster.GetAttackAnimationLength();
-            if(WordManager.BossMode)
+            if(WaveManager._isGameRun && WordManager.hasActiveWord && _remainingTime >= _idleTime)
             {
-                healthBar.BossDamage();
-                healthBar.DamageHealth(BossDamage);
-            }
-            else
-            {
-                healthBar.MonsterDamage();
-                if(WordManager.practice)
+                WordManager.activeMonster.Attack();
+                WordManager.activeMonster.AttackAnimation();
+                // AttackTime = WordManager.activeMonster.GetAttackAnimationLength();
+                if(WordManager.BossMode)
                 {
-                    healthBar.DamageHealthPractice();
+                    healthBar.BossDamage();
+                    healthBar.DamageHealth(BossDamage);
                 }
                 else
                 {
+                    healthBar.MonsterDamage();
                     healthBar.DamageHealth(monsterDamage);
                 }
-            }
-            hurt = true;
-            _remainingTime -=_remainingTime;
-        //if it almost attack time do a warning
-        }else if(WaveManager._isGameRun && WordManager.hasActiveWord && _remainingTime >= (_idleTime - _warningTime)) 
-        {
-            //count for warning
-            warning += Time.deltaTime;
-            //if the warnswitch is off and warning is in the frequency turn it on and set the state of monster to attack(red)
-            if(!warnSwitch && warning > _warningTime/_warningfrequency)
+                hurt = true;
+                _remainingTime -=_remainingTime;
+            //if it almost attack time do a warning
+            }else if(WaveManager._isGameRun && WordManager.hasActiveWord && _remainingTime >= (_idleTime - _warningTime)) 
             {
-                warning = 0f;
-                warnSwitch = true;
-                WordManager.activeMonster.Attack();
-            }
-            //if the warnswitch is on and warning is in the frequency turn it off and set the state of monster to active(orange)
-            else if(warnSwitch && warning > _warningTime/_warningfrequency)
+                //count for warning
+                warning += Time.deltaTime;
+                //if the warnswitch is off and warning is in the frequency turn it on and set the state of monster to attack(red)
+                if(!warnSwitch && warning > _warningTime/_warningfrequency)
+                {
+                    warning = 0f;
+                    warnSwitch = true;
+                    WordManager.activeMonster.Attack();
+                }
+                //if the warnswitch is on and warning is in the frequency turn it off and set the state of monster to active(orange)
+                else if(warnSwitch && warning > _warningTime/_warningfrequency)
+                {
+                    warning = 0f;
+                    warnSwitch = false;
+                    WordManager.activeMonster.Active();
+                }
+            //if it is in the attack time stay in attack
+            }else if(WaveManager._isGameRun && WordManager.hasActiveWord && _remainingTime >= 0f)
             {
+                //how long enemy stay in attack
+                WordManager.activeMonster.Active();
                 warning = 0f;
                 warnSwitch = false;
-                WordManager.activeMonster.Active();
             }
-        //if it is in the attack time stay in attack
-        }else if(WaveManager._isGameRun && WordManager.hasActiveWord && _remainingTime >= 0f)
-        {
-            //how long enemy stay in attack
-            WordManager.activeMonster.Active();
-            warning = 0f;
-            warnSwitch = false;
         }
         
         if(!WaveManager._isGameRun)

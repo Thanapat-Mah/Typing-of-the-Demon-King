@@ -67,10 +67,6 @@ public class healthBar : MonoBehaviour
         currentTime = attackTime;
         playerHealth -= damage;
     }
-    public void DamageHealthPractice()
-    {
-        _isDamage = true;
-    }
     
     public float getHealth()
     {

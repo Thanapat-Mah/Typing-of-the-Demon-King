@@ -134,10 +134,6 @@ public class WordManager : MonoBehaviour
                 {
                     healthBar.DamageHealth(errorDamage);
                 }
-                else 
-                {
-                    healthBar.DamageHealthPractice();
-                }
                 missSpell = true;
                 missSpellSFX = true;
             }
