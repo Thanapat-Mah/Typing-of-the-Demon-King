@@ -495,7 +495,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  clickSound: {fileID: 0}
 --- !u!114 &279797705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,7 +687,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  clickSound: {fileID: 0}
 --- !u!114 &551626305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1102,7 +1100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  clickSound: {fileID: 0}
 --- !u!114 &752195643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1387,8 +1384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef522f7b1d4de0d46b1b5f0493f1e275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  clickSound: {fileID: 0}
+  animator: {fileID: 2063042205}
 --- !u!114 &820791571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1684,7 +1680,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  clickSound: {fileID: 0}
 --- !u!114 &1148134231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2420,5 +2415,8 @@ MonoBehaviour:
 --- !u!82 &2063042206 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: -1234585955053742012, guid: 945f19cb4b72dac45a33270789882ab1, type: 3}
+--- !u!95 &2063042205 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6905721657794263490, guid: 945f19cb4b72dac45a33270789882ab1, type: 3}
   m_PrefabInstance: {fileID: 2063042203}
   m_PrefabAsset: {fileID: 0}

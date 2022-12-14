@@ -2662,7 +2662,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ACCURACY
+  m_text: AVG ACCURACY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f238d7398e6622b478634b46052d32a5, type: 2}
   m_sharedMaterial: {fileID: -1417889432158505643, guid: f238d7398e6622b478634b46052d32a5, type: 2}
@@ -3600,7 +3600,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NET WPM
+  m_text: AVG NET WPM
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f238d7398e6622b478634b46052d32a5, type: 2}
   m_sharedMaterial: {fileID: -1417889432158505643, guid: f238d7398e6622b478634b46052d32a5, type: 2}
@@ -4238,7 +4238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: RAW WPM
+  m_text: AVG RAW WPM
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f238d7398e6622b478634b46052d32a5, type: 2}
   m_sharedMaterial: {fileID: -1417889432158505643, guid: f238d7398e6622b478634b46052d32a5, type: 2}

@@ -155,6 +155,10 @@ public class WordManager : MonoBehaviour
                     AddNewMonster = true;
                 }  
                 else if(AllmonsterCount == maximumMonsterPerWave) {
+                    Debug.Log("acc = " + StatManager.Instance.GetAccuracy());
+                    StatManager.Instance.AddWaveStatistic();
+                    TimeManager.Instance.StopTimer();
+                    Debug.Log("add stat");
                     EndOfWave = true;
                 }
             }
@@ -176,14 +180,16 @@ public class WordManager : MonoBehaviour
                 StartCoroutine(monsters[0].RemoveMonster());
                 // monsters[0].RemoveMonster();
                 monsters.RemoveAt(0);
+                StatManager.Instance.AddWaveStatistic();
+                TimeManager.Instance.StopTimer();
                 EasyBossDefeated = true;
                 changeScene.OnClick_MoveToScene("ResultScene");
             }
         }
         if(hasActiveWord)
         {
-            StatManager.Instance.CalculateStatistic();
-        }
+            StatManager.Instance.CalculateRawStatistic();
+        }        
     }
 
     public char GetNextLetter()
