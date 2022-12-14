@@ -48,6 +48,7 @@ public class WaveManager : MonoBehaviour
                     WordManager.AddWord();
                     WordManager.AddWord();
                 }
+                TimeManager.Instance.ContinueTimer();
                 _isGameRun = true;
             }
         }

@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e979220-1116-419b-a63b-aa5d3c3fb8cf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.The Typing of the Demon King/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The Typing of the Demon King/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Hope.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Hope.wav.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Gameplay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/StatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/StatManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/TimeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/TimeManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WaveManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a074fbd7e5e047c0b5e06287db87daf7fc00/22/5436a2ab/AudioSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b4c3e0c01b884114a083ddbfa3a0cadf7400/25/76ebe57d/Input.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/StatManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/StatisticScene.cs" root0="FORCE_HIGHLIGHTING" />
@@ -89,7 +96,7 @@
       <workItem from="1670817257338" duration="10813000" />
       <workItem from="1670904772010" duration="13447000" />
       <workItem from="1670986419319" duration="5504000" />
-      <workItem from="1671005454082" duration="1316000" />
+      <workItem from="1671005454082" duration="2431000" />
     </task>
     <servers />
   </component>

@@ -98,7 +98,8 @@ public class StatManager : MonoBehaviour
         _netWpm = 0;
         _typedEntries = 0;
         _errors = 0;
-        TimeManager.Instance.StartTimer();
+        TimeManager.Instance.ResetTimer();
+        TimeManager.Instance.StopTimer();
         enabled = true;
     }
 

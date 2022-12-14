@@ -38,10 +38,15 @@ public class TimeManager : MonoBehaviour
         _time = 0;
         enabled = true;
     }
-    
+
     public void StopTimer()
     {
         enabled = false;
+    }
+    
+    public void ResetTimer()
+    {
+        _time = 0;
     }
     
     public void ContinueTimer()
