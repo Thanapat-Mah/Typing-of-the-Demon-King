@@ -34,6 +34,8 @@ public class WaveManager : MonoBehaviour
         //if the wave is end (all monster is dead) cooldown the game
         if(!_isGameRun)
         {
+            // StatManager.Instance.AddWaveStatistic();
+            // TimeManager.Instance.StopTimer();
             cooldown += Time.deltaTime;
             if(cooldown > waveCoolDown)
             {
@@ -42,7 +44,6 @@ public class WaveManager : MonoBehaviour
                 {
                     KeyManager.addKey();
                 }
-                StatManager.Instance.StartCalculateStatistic();
                 //Check number of key
                 if(KeyManager.getKeyNum() == KeyManager.getMaxKeyNum())
                 {
@@ -60,11 +61,13 @@ public class WaveManager : MonoBehaviour
     {
         numberOfWaveCount++;
         cooldown = 0f;
+        StatManager.Instance.StartNewWave();
         _isGameRun = false;
     }
 
     public void StartBossWave()
     {
+        StatManager.Instance.StartNewWave();
         WordManager.BossMode = true;
         WordManager.AddBossWord();
     }
