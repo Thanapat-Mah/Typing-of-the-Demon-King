@@ -44,7 +44,7 @@ public class WaveManager : MonoBehaviour
                 }
                 StatManager.Instance.StartCalculateStatistic();
                 //Check number of key
-                if(KeyManager.getKeyNum() == KeyManager.getMaxKeyNum())
+                if(KeyManager.getKeyNum() >= KeyManager.getMaxKeyNum())
                 {
                     StartBossWave();
                 } else {

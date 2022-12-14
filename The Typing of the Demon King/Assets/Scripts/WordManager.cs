@@ -126,7 +126,10 @@ public class WordManager : MonoBehaviour
             else
             {
                 StatManager.Instance.AddErrors();
-                healthBar.DamageHealth(errorDamage);
+                if(!practice)
+                {
+                    healthBar.DamageHealth(errorDamage);
+                }
                 missSpell = true;
             }
         }
