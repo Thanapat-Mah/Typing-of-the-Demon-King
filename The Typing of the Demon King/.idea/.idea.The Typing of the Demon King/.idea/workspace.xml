@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5e979220-1116-419b-a63b-aa5d3c3fb8cf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.The Typing of the Demon King/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The Typing of the Demon King/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/System/SceneTransition.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/System/SceneTransition.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Gameplay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PracticePrepare.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PracticePrepare.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/KeyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/KeyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/ChangeScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/ChangeScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/ResultScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/ResultScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Lv1_Slime.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Lv1_Slime.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WaveManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +93,8 @@
       <workItem from="1670817257338" duration="10813000" />
       <workItem from="1670904772010" duration="13447000" />
       <workItem from="1670986419319" duration="5504000" />
-      <workItem from="1671005454082" duration="5978000" />
+      <workItem from="1671005454082" duration="6826000" />
+      <workItem from="1671024605090" duration="298000" />
     </task>
     <servers />
   </component>

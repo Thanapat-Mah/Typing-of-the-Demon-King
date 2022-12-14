@@ -40,14 +40,16 @@ public class WaveManager : MonoBehaviour
         {
             // StatManager.Instance.AddWaveStatistic();
             // TimeManager.Instance.StopTimer();
+            var keyCollected = KeyManager.getKeyNum() >= KeyManager.getMaxKeyNum();
             cooldown += Time.deltaTime;
-            if(cooldown > waveCoolDown - 1)
-                bossBG.SetActive(true);
+            if (cooldown > waveCoolDown - 1)
+                if (keyCollected)
+                    bossBG.SetActive(true);
             if(cooldown > waveCoolDown)
             {
                 WordManager.AllmonsterCount = 0;
                 //Check number of key
-                if(KeyManager.getKeyNum() >= KeyManager.getMaxKeyNum())
+                if(keyCollected)
                 {
                     KeyManager.ResetKey();
                     // ChangeScene.FadeIn();
