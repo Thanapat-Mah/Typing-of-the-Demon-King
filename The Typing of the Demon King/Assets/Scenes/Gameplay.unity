@@ -241,7 +241,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHurt: {fileID: 392026145}
-  PlayerDeath: {fileID: 2090917579}
   MonsterAttack: {fileID: 1167125776}
   GotKey: {fileID: 1063113479}
   BossAttack: {fileID: 884245019}
@@ -3762,9 +3761,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 20
+  m_MaxValue: 35
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 35
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

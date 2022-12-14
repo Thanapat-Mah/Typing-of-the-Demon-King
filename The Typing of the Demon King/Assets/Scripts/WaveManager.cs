@@ -56,7 +56,7 @@ public class WaveManager : MonoBehaviour
     //go to next wave
     public void NextWave()
     {
-        if(StatManager.Instance.GetRawWpm() >= 30)
+        if(StatManager.Instance.GetRawWpm() >= 30 && StatManager.Instance.GetAccuracy() >= 85)
         {
             KeyManager.addKey();
         }

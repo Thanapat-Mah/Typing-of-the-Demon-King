@@ -24,4 +24,8 @@ public class ChangeScene : MonoBehaviour
     {
         StatManager.Instance.StartGame();
     }
+    public void OnClick_ExitGame()
+    {
+        Application.Quit();
+    }
 }
