@@ -39,7 +39,6 @@ public class Key : MonoBehaviour
     {
         _isSelected = !_isSelected;
         RenderSprite();
-        Debug.Log(key);
     }
 
     // Render the sprite color according to its status

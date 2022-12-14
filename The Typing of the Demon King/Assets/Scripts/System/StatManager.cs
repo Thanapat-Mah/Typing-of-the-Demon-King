@@ -160,7 +160,7 @@ public class StatManager : MonoBehaviour
     public void AddWaveStatistic()
     {
         _waveAccuracyList.Add(_accuracy);
-        Debug.Log("add " + _accuracy + " to acc wave list");
+        //Debug.Log("add " + _accuracy + " to acc wave list");
         _waveRawWpmList.Add(_rawWpm);
         _waveNetWpmList.Add(_netWpm);
         _waveTypedEntries += _typedEntries;
