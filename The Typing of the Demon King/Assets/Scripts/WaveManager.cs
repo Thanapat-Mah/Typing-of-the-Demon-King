@@ -17,6 +17,8 @@ public class WaveManager : MonoBehaviour
     //is the game running
     public bool _isGameRun;
     public float cooldown = 0f;
+
+    public GameObject hint;
     private void Start()
     {
         _isGameRun = true;
@@ -44,15 +46,17 @@ public class WaveManager : MonoBehaviour
             cooldown += Time.deltaTime;
             if (cooldown > waveCoolDown - 1)
                 if (keyCollected)
+                {
                     bossBG.SetActive(true);
+                }
             if(cooldown > waveCoolDown)
             {
                 WordManager.AllmonsterCount = 0;
                 //Check number of key
-                if(keyCollected)
-                {
+                if(KeyManager.getKeyNum() >= KeyManager.getMaxKeyNum())
+                { // ChangeScene.FadeIn();
+                    hint.SetActive(false);
                     KeyManager.ResetKey();
-                    // ChangeScene.FadeIn();
                     StartBossWave();
                 } else {
                     WordManager.AddWord();

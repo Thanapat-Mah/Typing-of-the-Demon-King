@@ -6010,6 +6010,7 @@ MonoBehaviour:
   waveCoolDown: 5
   _isGameRun: 0
   cooldown: 0
+  hint: {fileID: 1291945343}
 --- !u!114 &2024397203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6054,8 +6055,6 @@ MonoBehaviour:
   cooldown: {fileID: 1462657890}
   AccuracyText: {fileID: 1487788185}
   blood: {fileID: 701695108}
-  bloodAnimator: {fileID: 0}
-  hint: {fileID: 1291945343}
   bloodOverlay: 2
 --- !u!114 &2024397205
 MonoBehaviour:

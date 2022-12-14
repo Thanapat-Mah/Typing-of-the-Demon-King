@@ -18,7 +18,6 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI AccuracyText;
     public GameObject blood;
     private Animator bloodAnimator;
-    public GameObject hint;
     private float TempCoolDown;
     private int TempmonsterRemain;
     //How long player stay in bloodOverlay
@@ -56,7 +55,6 @@ public class UIController : MonoBehaviour
             TempmonsterRemain = 0;
             waveText.gameObject.transform.parent.gameObject.SetActive(false);
             remainingMonsterText.gameObject.transform.parent.gameObject.SetActive(false);
-            hint.SetActive(false);
             // waveText.text = "Waiting for Next Wave";
         } else {
             if(cooldown)
