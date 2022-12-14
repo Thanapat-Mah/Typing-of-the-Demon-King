@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e979220-1116-419b-a63b-aa5d3c3fb8cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Enemy/Sacksquatch.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Enemy/Sacksquatch/Sacksquatch.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Enemy/Sacksquatch/Sacksquatch.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Enemy/Sacksquatch/defeated.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Enemy/Sacksquatch/defeated.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Enemy/Sacksquatch/idle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Enemy/Sacksquatch/idle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Sacksquatch.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Sacksquatch.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprite/Enemy/Sacksquatch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprite/Enemy/Sacksquatch.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.The Typing of the Demon King/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The Typing of the Demon King/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PracticeGameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PracticeGameplay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Gameplay.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +89,7 @@
       <workItem from="1670817257338" duration="10813000" />
       <workItem from="1670904772010" duration="13447000" />
       <workItem from="1670986419319" duration="5504000" />
-      <workItem from="1671005454082" duration="1053000" />
+      <workItem from="1671005454082" duration="1316000" />
     </task>
     <servers />
   </component>
