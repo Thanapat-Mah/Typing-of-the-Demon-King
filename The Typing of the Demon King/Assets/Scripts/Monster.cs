@@ -6,6 +6,7 @@ using UnityEngine;
 public class Monster : MonoBehaviour
 {
     private Animator _animator;
+    public bool _isAttack = false;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class Monster : MonoBehaviour
     
     public void AttackAnimation ()
     {
+        _isAttack = true;
         _animator.SetTrigger("Attack");
     }
     public float GetAttackAnimationLength()

@@ -64,7 +64,14 @@ public class MonsterManager : MonoBehaviour
             else
             {
                 healthBar.MonsterDamage();
-                healthBar.DamageHealth(monsterDamage);
+                if(WordManager.practice)
+                {
+                    healthBar.DamageHealthPractice();
+                }
+                else
+                {
+                    healthBar.DamageHealth(monsterDamage);
+                }
             }
             hurt = true;
             _remainingTime -=_remainingTime;

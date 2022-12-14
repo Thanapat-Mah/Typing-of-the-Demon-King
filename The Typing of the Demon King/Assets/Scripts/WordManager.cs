@@ -41,6 +41,9 @@ public class WordManager : MonoBehaviour
     private int BossWordCount = 0;
     public int errorDamage = 1;
     public bool missSpell = false;
+    public bool missSpellSFX = false;
+    public bool MonsterDied = false;
+    public bool correctSpell = false;
     private int tempboss = 0;
 
     [SerializeField] private ChangeScene changeScene;
@@ -122,6 +125,7 @@ public class WordManager : MonoBehaviour
             if(activeWord.GetNextLetter() == letter)
             {
                 activeWord.TypeLetter();
+                correctSpell = true;
             }
             else
             {
@@ -130,13 +134,19 @@ public class WordManager : MonoBehaviour
                 {
                     healthBar.DamageHealth(errorDamage);
                 }
+                else 
+                {
+                    healthBar.DamageHealthPractice();
+                }
                 missSpell = true;
+                missSpellSFX = true;
             }
         }
         //When finish the whole activeword, change hasactiveword to false and remove activeword from the "words" list
         if(hasActiveWord && activeWord.WordTyped() && !BossMode)
         {
             hasActiveWord = false;
+            MonsterDied = true;
             words.Remove(activeWord);
             StartCoroutine(monsters[0].RemoveMonster());
             // monsters[0].RemoveMonster();
@@ -148,17 +158,14 @@ public class WordManager : MonoBehaviour
             else
             {
                 AllmonsterCount++;
-                Debug.Log(AllmonsterCount);
                 if(AllmonsterCount < maximumMonsterPerWave-1 && !EndOfWave)
                 {
                     AddWord();
                     AddNewMonster = true;
                 }  
                 else if(AllmonsterCount == maximumMonsterPerWave) {
-                    Debug.Log("acc = " + StatManager.Instance.GetAccuracy());
                     StatManager.Instance.AddWaveStatistic();
                     TimeManager.Instance.StopTimer();
-                    Debug.Log("add stat");
                     EndOfWave = true;
                 }
             }
@@ -176,6 +183,7 @@ public class WordManager : MonoBehaviour
             }
             if(words.Count == 0)
             {
+                MonsterDied = true;
                 tempboss = 0;
                 StartCoroutine(monsters[0].RemoveMonster());
                 // monsters[0].RemoveMonster();

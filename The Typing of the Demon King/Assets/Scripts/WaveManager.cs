@@ -40,10 +40,6 @@ public class WaveManager : MonoBehaviour
             if(cooldown > waveCoolDown)
             {
                 WordManager.AllmonsterCount = 0;
-                if(StatManager.Instance.GetRawWpm() >= 30)
-                {
-                    KeyManager.addKey();
-                }
                 //Check number of key
                 if(KeyManager.getKeyNum() >= KeyManager.getMaxKeyNum())
                 {
@@ -59,6 +55,10 @@ public class WaveManager : MonoBehaviour
     //go to next wave
     public void NextWave()
     {
+        if(StatManager.Instance.GetRawWpm() >= 30)
+        {
+            KeyManager.addKey();
+        }
         numberOfWaveCount++;
         cooldown = 0f;
         StatManager.Instance.StartNewWave();

@@ -10,6 +10,7 @@ public class KeyManager : MonoBehaviour
     private int key = 0;
     //Maximum Key the player get for boss
     private int MaxKey = 3;
+    public bool _isGetKey = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,7 @@ public class KeyManager : MonoBehaviour
     }
     public void addKey()
     {
+        _isGetKey = true;
         key++;
     }
 

@@ -2,18 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SFXMusic : MonoBehaviour
+public class SFXMusicPractice : MonoBehaviour
 {
-    public AudioSource PlayerHurt;
     public AudioSource MonsterAttack;
-    public AudioSource GotKey;
     public AudioSource BossAttack;
     public AudioSource MonsterHurt;
     public AudioSource MissSpell;
     public AudioSource MonsterDied;
     public WordManager WordManager;
-    public healthBar healthBar;
-    public KeyManager KeyManager;
 
     // Update is called once per frame
     void Update()
@@ -32,19 +28,6 @@ public class SFXMusic : MonoBehaviour
                 }
                 WordManager.activeMonster._isAttack = false;
             }
-        }
-        if(healthBar._isDamage)
-        {
-            if(!WordManager.missSpellSFX)
-            {
-                PlayerHurt.PlayDelayed(0.5f);
-            }
-            healthBar._isDamage = false;
-        }
-        if(KeyManager._isGetKey)
-        {
-            GotKey.Play();
-            KeyManager._isGetKey = false;
         }
         if(WordManager.correctSpell)
         {

@@ -15,6 +15,7 @@ public class healthBar : MonoBehaviour
     private float attackTime;
     private float currentTime;
     public static bool GameOver = false;
+    public bool _isDamage = false;
     [SerializeField] private ChangeScene changeScene;
 
     private void Start()
@@ -62,8 +63,13 @@ public class healthBar : MonoBehaviour
     
     public void DamageHealth(int damage)
     {
+        _isDamage = true;
         currentTime = attackTime;
         playerHealth -= damage;
+    }
+    public void DamageHealthPractice()
+    {
+        _isDamage = true;
     }
     
     public float getHealth()
