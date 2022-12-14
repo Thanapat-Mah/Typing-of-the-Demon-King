@@ -302,7 +302,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &183597071
 GameObject:
@@ -946,7 +946,7 @@ Transform:
   m_Children:
   - {fileID: 1866582955}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &737651653
 GameObject:
@@ -1856,7 +1856,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1546521658
 GameObject:
@@ -1924,7 +1924,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1834806772
 GameObject:
@@ -2026,7 +2026,7 @@ RectTransform:
   - {fileID: 752195641}
   - {fileID: 1148134229}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2310,7 +2310,7 @@ PrefabInstance:
     - target: {fileID: 6905721657794263489, guid: 945f19cb4b72dac45a33270789882ab1, type: 3}
       propertyPath: clickSound
       value: 
-      objectReference: {fileID: 2063042206}
+      objectReference: {fileID: 0}
     - target: {fileID: 6905721657794263491, guid: 945f19cb4b72dac45a33270789882ab1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2321,7 +2321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6905721657794263491, guid: 945f19cb4b72dac45a33270789882ab1, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6905721657794263491, guid: 945f19cb4b72dac45a33270789882ab1, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2412,9 +2412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef522f7b1d4de0d46b1b5f0493f1e275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &2063042206 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: -1234585955053742012, guid: 945f19cb4b72dac45a33270789882ab1, type: 3}
 --- !u!95 &2063042205 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6905721657794263490, guid: 945f19cb4b72dac45a33270789882ab1, type: 3}
