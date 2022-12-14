@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e979220-1116-419b-a63b-aa5d3c3fb8cf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Gameplay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.The Typing of the Demon King/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The Typing of the Demon King/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/ResultScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/ResultScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/StatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/StatManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/StatisticScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/StatisticScene.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/WordManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WordManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +90,7 @@
       <workItem from="1668015900284" duration="1707000" />
       <workItem from="1670817257338" duration="10813000" />
       <workItem from="1670904772010" duration="13447000" />
+      <workItem from="1670986419319" duration="1545000" />
     </task>
     <servers />
   </component>

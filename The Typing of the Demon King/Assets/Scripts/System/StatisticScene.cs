@@ -14,10 +14,10 @@ public class StatisticScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        avgAcc.SetText(StatManager.Instance.GetAverageAccuracy().ToString());
-        rawWpm.SetText(StatManager.Instance.GetAverageRawWpm().ToString());
-        topNetWpm.SetText(StatManager.Instance.GetMaxOverallNetWpm().ToString());
-        netWpm.SetText(StatManager.Instance.GetAverageNetWpm().ToString());
+        avgAcc.SetText(StatManager.Instance.GetAverageTotalAccuracy().ToString());
+        rawWpm.SetText(StatManager.Instance.GetAverageTotalRawWpm().ToString());
+        topNetWpm.SetText(StatManager.Instance.GetMaxTotalNetWpm().ToString());
+        netWpm.SetText(StatManager.Instance.GetAverageTotalNetWpm().ToString());
         entry.SetText(StatManager.Instance.GetTotalTypeEntries().ToString());
         error.SetText(StatManager.Instance.GetTotalErrors().ToString());
     }

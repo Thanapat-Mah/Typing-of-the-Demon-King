@@ -16,7 +16,7 @@ public class ResultScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StatManager.Instance.CalculateAverageStatistic();
+        StatManager.Instance.CalculateAverageWaveStatistic();
         
         if (healthBar.GameOver)
         {
@@ -33,10 +33,10 @@ public class ResultScene : MonoBehaviour
         var minutes = Mathf.FloorToInt(time / 60);
         var seconds = Mathf.FloorToInt(time % 60);
         
-        acc.SetText(StatManager.Instance.GetAccuracy().ToString());
+        acc.SetText(StatManager.Instance.GetAverageWaveAccuracy().ToString());
         timeUses.SetText(minutes + "." + seconds);
-        rawWpm.SetText(StatManager.Instance.GetRawWpm().ToString());
-        netWpm.SetText(StatManager.Instance.GetNetWpm().ToString());
+        rawWpm.SetText(StatManager.Instance.GetAverageWaveRawWpm().ToString());
+        netWpm.SetText(StatManager.Instance.GetAverageWaveNetWpm().ToString());
         entry.SetText(StatManager.Instance.GetTypeEntries().ToString());
         error.SetText(StatManager.Instance.GetErrors().ToString());
     }

@@ -161,7 +161,7 @@ public class WordManager : MonoBehaviour
             }
         }
         //if(WaveManager._isGameRun)
-        StatManager.Instance.CalculateStatistic();
+        StatManager.Instance.CalculateRawStatistic();
     }
 
     public char GetNextLetter()
