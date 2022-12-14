@@ -6,6 +6,7 @@ using TMPro;
 
 public class UIController : MonoBehaviour
 {
+    // public ChangeScene ChangeScene;
     public WordManager WordManager;
     public WaveManager WaveManager;
     public MonsterManager MonsterManager;
@@ -16,7 +17,8 @@ public class UIController : MonoBehaviour
     public GameObject cooldown;
     public TextMeshProUGUI AccuracyText;
     public GameObject blood;
-    public Animator bloodAnimator;
+    private Animator bloodAnimator;
+    public GameObject hint;
     private float TempCoolDown;
     private int TempmonsterRemain;
     //How long player stay in bloodOverlay
@@ -39,6 +41,8 @@ public class UIController : MonoBehaviour
     {
         if(!WordManager.BossMode && WaveManager._isGameRun)
         {
+            waveText.gameObject.SetActive(true);
+            remainingMonsterText.gameObject.SetActive(true);
             if(cooldown)
             {
                 cooldown.SetActive(false);
@@ -50,13 +54,17 @@ public class UIController : MonoBehaviour
             cooldown.SetActive(true);
             TempCoolDown = WaveManager.waveCoolDown-WaveManager.cooldown;
             TempmonsterRemain = 0;
+            waveText.gameObject.transform.parent.gameObject.SetActive(false);
+            remainingMonsterText.gameObject.transform.parent.gameObject.SetActive(false);
+            hint.SetActive(false);
             // waveText.text = "Waiting for Next Wave";
         } else {
             if(cooldown)
             {
+                // ChangeScene.FadeOut();
                 cooldown.SetActive(false);
             }
-            waveText.text = "Boss";
+            // waveText.text = "Boss";
         }
         AccuracyText.text = StatManager.Instance.GetAccuracy().ToString()+" %";
         WPMText.text = StatManager.Instance.GetRawWpm().ToString();

@@ -5,8 +5,11 @@ using UnityEngine;
 //Class for Monster Attack time and wave setting
 public class WaveManager : MonoBehaviour
 {
+    // public ChangeScene ChangeScene;
     public WordManager WordManager;
     public KeyManager KeyManager;
+
+    public GameObject bossBG;
     //Number of the current wave
     public int numberOfWaveCount = 1;
     public float waveCoolDown = 10f;
@@ -19,6 +22,7 @@ public class WaveManager : MonoBehaviour
         _isGameRun = true;
         numberOfWaveCount = 1;
         cooldown = 0f;
+        bossBG.SetActive(false);
     }
     private void Update()
     {
@@ -37,12 +41,16 @@ public class WaveManager : MonoBehaviour
             // StatManager.Instance.AddWaveStatistic();
             // TimeManager.Instance.StopTimer();
             cooldown += Time.deltaTime;
+            if(cooldown > waveCoolDown - 1)
+                bossBG.SetActive(true);
             if(cooldown > waveCoolDown)
             {
                 WordManager.AllmonsterCount = 0;
                 //Check number of key
                 if(KeyManager.getKeyNum() >= KeyManager.getMaxKeyNum())
                 {
+                    KeyManager.ResetKey();
+                    // ChangeScene.FadeIn();
                     StartBossWave();
                 } else {
                     WordManager.AddWord();

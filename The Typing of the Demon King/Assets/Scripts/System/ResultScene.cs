@@ -24,11 +24,13 @@ public class ResultScene : MonoBehaviour
         {
             result.SetText("Game Over");
             result.color = Color.red;
+            healthBar.GameOver = false;
         }
         else if (WordManager.EasyBossDefeated)
         {
             result.SetText("COMPLETE EASY LEVEL");
             result.color = Color.green;
+            WordManager.EasyBossDefeated = false;
         }
         TimeManager.Instance.StopTimer();
         var time = StatManager.Instance.GetTimeUsed();

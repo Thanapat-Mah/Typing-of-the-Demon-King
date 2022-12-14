@@ -47,4 +47,9 @@ public class KeyManager : MonoBehaviour
     {
         return MaxKey;
     }
+    
+    public void ResetKey()
+    {
+        key = 0;
+    }
 }
